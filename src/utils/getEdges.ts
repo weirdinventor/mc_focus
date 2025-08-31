@@ -6,13 +6,13 @@
  */
 
 // Define the 'Edges' type locally since we are not importing it from the native library.
-export type Edges = Array<'top' | 'right' | 'bottom' | 'left'>;
+// export type Edges = Array<'top' | 'right' | 'bottom' | 'left'>;
 
-export const getEdges = (
-  fullscreen: boolean,
-  withoutTopEdge: boolean,
-  withoutBottomEdge: boolean,
-): Edges => {
-  // For web, there are no safe area edges to consider. Always return an empty array.
-  return [];
-};
+// export const getEdges = (
+//   fullscreen: boolean,
+//   withoutTopEdge: boolean,
+//   withoutBottomEdge: boolean,
+// ): Edges => {
+//   // For web, there are no safe area edges to consider. Always return an empty array.
+//   return [];
+// };
