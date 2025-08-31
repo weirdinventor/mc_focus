@@ -1,6 +1,6 @@
 // /components/OTPInput.js
 
-import React, { forwardRef, useImperativeHandle, useRef } from 'react';
+import { forwardRef } from 'react';
 import OtpInput from 'react-otp-input';
 
 // --- Mock de constantes ---
@@ -51,7 +51,7 @@ interface OTPInputCustomProps {
 }
 
 // --- Le composant React JS ---
-export const OTPInput = forwardRef(({ isError, ...otpInputProps }: OTPInputCustomProps, ref) => {
+export const OTPInput = forwardRef(({ isError, ...otpInputProps }: OTPInputCustomProps, ) => {
   // Le `ref` de `react-otp-input` ne donne pas accès aux mêmes méthodes.
   // Nous ne pouvons pas simplement le transférer. On pourrait l'adapter si nécessaire.
   // Pour une conversion simple, nous omettons la logique de ref avancée pour l'instant.
@@ -66,7 +66,7 @@ export const OTPInput = forwardRef(({ isError, ...otpInputProps }: OTPInputCusto
         inputStyle={`otp-input ${isError ? 'error' : ''}`}
         shouldAutoFocus
         // `renderInput` est puissant pour la personnalisation
-        renderInput={(props, index) => (
+        renderInput={(props, ) => (
           <input
             {...props}
             className={`${props.className} ${props.value ? 'filled' : ''}`}
