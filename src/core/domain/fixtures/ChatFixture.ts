@@ -1,0 +1,98 @@
+export const ChatFixture = [
+  {
+    uid: '28',
+    date: new Date().toISOString(),
+    name: 'Aironas',
+    text: "Salut à tous ! Quelqu'un a-t-il des conseils sur la façon de réduire le taux de rebond sur une boutique Shopify ?",
+  },
+  {
+    uid: '29',
+    date: new Date().toISOString(),
+    name: 'Aironas',
+    text: "Salut à tous ! Quelqu'un a-t-il des conseils sur la façon de réduire le taux de rebond sur une boutique Shopify ?",
+  },
+  {
+    uid: '24',
+    date: new Date().toISOString(),
+    name: 'Aironas',
+    text: "Salut à tous ! Quelqu'un a-t-il des conseils sur la façon de réduire le taux de rebond sur une boutique Shopify ?",
+  },
+  {
+    uid: '25',
+    date: '2024-02-17T14:00:00',
+    name: 'Aironas',
+    text: "Salut à tous ! Quelqu'un a-t-il des conseils sur la façon de réduire le taux de rebond sur une boutique Shopify ?",
+  },
+  {
+    uid: '26',
+    date: '2024-02-17T18:45:00',
+    name: 'Aironas',
+    text: "Salut à tous ! Quelqu'un a-t-il des conseils sur la façon de réduire le taux de rebond sur une boutique Shopify ?",
+  },
+  {
+    uid: '27',
+    date: '2024-02-17T10:30:00',
+    name: 'Aironas',
+    text: "Salut à tous ! Quelqu'un a-t-il des conseils sur la façon de réduire le taux de rebond sur une boutique Shopify ?",
+  },
+  {
+    uid: '1',
+    date: '2024-02-16T08:30:00',
+    name: 'Aironas',
+    text: "Salut à tous ! Quelqu'un a-t-il des conseils sur la façon de réduire le taux de rebond sur une boutique Shopify ?",
+  },
+  {
+    uid: '2',
+    date: '2024-02-16T14:00:00',
+    name: 'Aironas',
+    text: "Salut à tous ! Quelqu'un a-t-il des conseils sur la façon de réduire le taux de rebond sur une boutique Shopify ?",
+  },
+  {
+    uid: '3',
+    date: '2024-02-16T18:45:00',
+    name: 'Aironas',
+    text: "Salut à tous ! Quelqu'un a-t-il des conseils sur la façon de réduire le taux de rebond sur une boutique Shopify ?",
+  },
+  {
+    uid: '4',
+    date: '2024-02-15T10:30:00',
+    name: 'Aironas',
+    text: "Salut à tous ! Quelqu'un a-t-il des conseils sur la façon de réduire le taux de rebond sur une boutique Shopify ?",
+  },
+  {
+    uid: '5',
+    date: '2024-02-15T14:00:00',
+    name: 'Aironas',
+    text: "Salut à tous ! Quelqu'un a-t-il des conseils sur la façon de réduire le taux de rebond sur une boutique Shopify ?",
+  },
+  {
+    uid: '6',
+    date: '2024-02-15T16:30:00',
+    name: 'Aironas',
+    text: "Salut à tous ! Quelqu'un a-t-il des conseils sur la façon de réduire le taux de rebond sur une boutique Shopify ?",
+  },
+  {
+    uid: '7',
+    date: '2024-02-14T09:15:00',
+    name: 'Aironas',
+    text: "Salut à tous ! Quelqu'un a-t-il des conseils sur la façon de réduire le taux de rebond sur une boutique Shopify ?",
+  },
+  {
+    uid: '8',
+    date: '2024-02-14T12:45:00',
+    name: 'Aironas',
+    text: "Salut à tous ! Quelqu'un a-t-il des conseils sur la façon de réduire le taux de rebond sur une boutique Shopify ?",
+  },
+  {
+    uid: '9',
+    date: '2024-02-14T15:30:00',
+    name: 'Aironas',
+    text: "Salut à tous ! Quelqu'un a-t-il des conseils sur la façon de réduire le taux de rebond sur une boutique Shopify ?",
+  },
+  {
+    uid: '10',
+    date: '2024-02-13T08:00:00',
+    name: 'Aironas',
+    text: "Salut à tous ! Quelqu'un a-t-il des conseils sur la façon de réduire le taux de rebond sur une boutique Shopify ?",
+  },
+];
