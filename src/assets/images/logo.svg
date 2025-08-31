@@ -1,0 +1,30 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_43_104)">
+<rect width="512" height="512" fill="black"/>
+<g filter="url(#filter0_f_43_104)">
+<circle cx="270.439" cy="512.44" r="233.006" transform="rotate(-169.844 270.439 512.44)" fill="url(#paint0_linear_43_104)"/>
+</g>
+<g filter="url(#filter1_f_43_104)">
+<path d="M313 193.667C313 195.552 313 196.495 312.414 197.081C311.828 197.667 310.886 197.667 309 197.667H240.636C238.751 197.667 237.808 197.667 237.222 198.253C236.636 198.838 236.636 199.781 236.636 201.667V238.52C236.636 240.406 236.636 241.349 237.222 241.935C237.808 242.52 238.751 242.52 240.636 242.52H306.818C308.704 242.52 309.647 242.52 310.232 243.106C310.818 243.692 310.818 244.635 310.818 246.52V274.187C310.818 276.073 310.818 277.016 310.232 277.601C309.647 278.187 308.704 278.187 306.818 278.187H240.636C238.751 278.187 237.808 278.187 237.222 278.773C236.636 279.359 236.636 280.302 236.636 282.187V348.891C236.636 349.991 236.636 350.541 236.379 350.997C236.122 351.454 235.653 351.74 234.713 352.31L205.076 370.31C202.385 371.944 201.039 372.762 200.019 372.188C199 371.615 199 370.04 199 366.891V204C199 184.201 199 174.302 205.151 168.151C211.302 162 221.201 162 241 162H309C310.886 162 311.828 162 312.414 162.586C313 163.172 313 164.114 313 166V193.667Z" fill="white"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_f_43_104" x="-194.913" y="47.0871" width="930.705" height="930.706" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="116.154" result="effect1_foregroundBlur_43_104"/>
+</filter>
+<filter id="filter1_f_43_104" x="192.7" y="155.7" width="126.6" height="222.971" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="3.15" result="effect1_foregroundBlur_43_104"/>
+</filter>
+<linearGradient id="paint0_linear_43_104" x1="270.439" y1="279.435" x2="270.439" y2="832.699" gradientUnits="userSpaceOnUse">
+<stop offset="0.346342" stop-color="#E79C1C"/>
+<stop offset="1" stop-color="#6BE1DF"/>
+</linearGradient>
+<clipPath id="clip0_43_104">
+<rect width="512" height="512" fill="white"/>
+</clipPath>
+</defs>
+</svg>
