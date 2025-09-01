@@ -98,7 +98,7 @@ export const resources = [
   ];
 
 // Mock messages for demonstration if no real messages
-const mockMessages = [
+export const mockMessages = [
   {
     id: '1',
     text: 'Salut à tous ! Quelqu\'un a-t-il des conseils sur la façon de réduire le taux de rebond sur une boutique Shopify ?',
@@ -138,3 +138,21 @@ const mockMessages = [
     timestamp: '14:40'
   }
 ]
+
+export const conversations = [
+  {
+    id: "1",
+    participant: { username: "john_doe", profilePicture: "/user1.jpg" },
+    latestMessage: { text: "Hey, how are you?" }
+  },
+  {
+    id: "2", 
+    participant: { username: "jane_smith", profilePicture: "/user2.jpg" },
+    latestMessage: { text: "Thanks for the help!" }
+  },
+  {
+    id: "3",
+    participant: { username: "mike_wilson", profilePicture: "/user3.jpg" },
+    latestMessage: { text: "See you tomorrow" }
+  }
+];
