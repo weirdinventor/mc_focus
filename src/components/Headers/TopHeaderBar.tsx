@@ -8,6 +8,8 @@ import { t } from '../../i18n'; // Assurez-vous que le chemin est correct
 import { I18nKeyPath } from '../../i18n/types'; // Assurez-vous que le chemin est correct
 
 import { BackButton } from '../Buttons/BackButton';
+import { Mail, Search } from 'lucide-react';
+import { RootStackRoutes } from '../../navigators/routes';
 
 interface TopHeaderBarProps {
   text?: I18nKeyPath;
@@ -45,22 +47,12 @@ export const TopHeaderBar = ({
           </span>
         )}
       </div>
-      <div style={styles.iconsWrapper}>
-        <button
-          style={styles.iconButton}
-          onClick={() => navigate('/search')} // Remplacez par votre route de recherche
-        >
-          <FiSearch size={24} color="white" />
-        </button>
-        {withMessage && (
-          <button
-            style={styles.iconButton}
-            onClick={() => navigate('/messages')} // Remplacez par votre route de messages
-          >
-            <FiInbox size={24} color="white" />
-          </button>
-        )}
-      </div>
+      {/* <div className="flex items-center space-x-3">
+        <Search className="w-6 h-6 text-white cursor-pointer hover:text-purple-200 transition-colors"
+          onClick={() => navigate(RootStackRoutes.SEARCH_SCREEN)} />
+        <Mail className="w-6 h-6 text-white cursor-pointer hover:text-purple-200 transition-colors"
+          onClick={() => navigate(RootStackRoutes.MESSAGES_LIST_SCREEN)} />
+      </div> */}
     </div>
   );
 };
