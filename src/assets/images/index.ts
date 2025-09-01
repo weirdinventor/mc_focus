@@ -24,6 +24,7 @@ import MC_LOGO from './MC_LOGO.png';
 import MC_LOGO_DARK from './MC_LOGO_DARK.png';
 import TWO from './two.png';
 import THREE from './three.png';
+import LOGO from './Logo.png';
 
 const ImageAssets = {
   APP_ICON,
@@ -51,7 +52,8 @@ const ImageAssets = {
   MC_LOGO,
   MC_LOGO_DARK,
   TWO,
-  THREE
+  THREE,
+  LOGO
 };
 
 export default ImageAssets;

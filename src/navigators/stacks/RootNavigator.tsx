@@ -41,7 +41,7 @@ const FullScreenLoader = () => (
       width: "100vw",
     }}
   >
-    <img src={ImageAssets.MC_LOGO} alt="App Logo" style={{ width: 120, height: "auto" }} />
+    <img src={ImageAssets.LOGO} alt="App Logo" style={{ width: 120, height: "auto" }} />
   </div>
 );
 
