@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
-@custom-variant dark (&:is(.dark *));
+/* @custom-variant dark (&:is(.dark *)); */
 
 :root {
   --background: oklch(1 0 0);
@@ -93,6 +93,10 @@ COMMENTED OUT - Dark theme disabled
   }
   body {
     @apply bg-background text-foreground;
+  }
+  body {
+    background-color: var(--background) !important;
+    color: var(--foreground) !important;
   }
 }
 

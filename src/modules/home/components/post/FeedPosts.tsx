@@ -113,7 +113,7 @@ const FeedComponent: React.FC<FeedComponentProps> = ({ categoryId, userId }) => 
                                 </p>
                                 <button 
                                     onClick={() => refetch()}
-                                    className="mt-6 px-6 py-3 bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-lg hover:from-purple-600 hover:to-purple-700 transition-all duration-200 font-semibold"
+                                    className="mt-6 px-6 py-3 bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-lg hover:from-purple-700 hover:to-purple-800 transition-all duration-200 font-semibold"
                                 >
                                     Actualiser
                                 </button>
@@ -240,20 +240,20 @@ const StyledPost: React.FC<StyledPostProps> = ({
             {/* Actions */}
             <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                 <div className="flex items-center space-x-4">
-                    <button className="flex items-center space-x-2 text-gray-600 hover:text-purple-600 transition-colors">
-                        <div className="w-8 h-8 rounded-full bg-gray-100 hover:bg-purple-50 flex items-center justify-center">
+                    <button className="flex items-center space-x-2 text-gray-800 hover:text-purple-700 transition-colors">
+                        <div className="w-8 h-8 rounded-full bg-white hover:bg-purple-50 flex items-center justify-center">
                             ❤️
                         </div>
                         <span className="text-sm font-medium">J'aime</span>
                     </button>
-                    <button className="flex items-center space-x-2 text-gray-600 hover:text-purple-600 transition-colors">
-                        <div className="w-8 h-8 rounded-full bg-gray-100 hover:bg-purple-50 flex items-center justify-center">
+                    <button className="flex items-center space-x-2 text-gray-800 hover:text-purple-700 transition-colors">
+                        <div className="w-8 h-8 rounded-full bg-white hover:bg-purple-50 flex items-center justify-center">
                             💬
                         </div>
                         <span className="text-sm font-medium">Commenter</span>
                     </button>
-                    <button className="flex items-center space-x-2 text-gray-600 hover:text-purple-600 transition-colors">
-                        <div className="w-8 h-8 rounded-full bg-gray-100 hover:bg-purple-50 flex items-center justify-center">
+                    <button className="flex items-center space-x-2 text-gray-800 hover:text-purple-700 transition-colors">
+                        <div className="w-8 h-8 rounded-full bg-white hover:bg-purple-50 flex items-center justify-center">
                             📤
                         </div>
                         <span className="text-sm font-medium">Partager</span>
