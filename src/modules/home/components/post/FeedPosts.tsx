@@ -13,71 +13,17 @@ interface FeedComponentProps {
 const FeedComponent: React.FC<FeedComponentProps> = ({ categoryId, userId }) => {
     const { data, isPending, isFetchingNextPage, refetch } = useGetFeedPostsQuery({ categoryId: categoryId ?? undefined });
 
-    // Mock data for demonstration
-    const mockPosts = [
-        {
-            id: '1',
-            author: {
-                username: 'George',
-                profilePicture: null,
-                role: 'Founder'
-            },
-            text: 'J-3 avant le prochain Moula Challenge',
-            mediaUrl: 'https://youtu.be/79byPjpx8lP?si-DrmC,92z',
-            mediaType: 'link',
-            thumbnail: null,
-            reactions: [],
-            createdAt: '2024-01-15'
-        },
-        {
-            id: '2', 
-            author: {
-                username: 'George',
-                profilePicture: null,
-                role: 'Founder'
-            },
-            text: 'Rejoignez notre groupe de discussion, on va parler français ! 😊\n\n💬 Parlons entre créateurs de contenu !\nLorem ipsum dolor sit amet consectetur. In tincidunt molestie sollicitudin tempor nulla sed blandit lacus. Fermentum...\n\n#astuce #rpmviral',
-            mediaUrl: null,
-            mediaType: null,
-            thumbnail: null,
-            reactions: [],
-            createdAt: '2024-01-15'
-        },
-        {
-            id: '3',
-            author: {
-                username: 'George', 
-                profilePicture: null,
-                role: 'Founder'
-            },
-            text: 'Que le Q4 commence....',
-            mediaUrl: null,
-            mediaType: null,
-            thumbnail: null,
-            reactions: [],
-            createdAt: '2024-01-14'
-        },
-        {
-            id: '4',
-            author: {
-                username: 'George',
-                profilePicture: null,
-                role: 'Founder'
-            },
-            text: 'La bonne surprise... J\'étends la boutique sur un nouveau marché et le taux de conversion continue d\'exploser\n\nPour savoir comment tu peux atteindre 15K€ dans les 30 prochains jours en ecom, ajoute un 😊 en réaction pour qu\'on lance la formation',
-            mediaUrl: null,
-            mediaType: null,
-            thumbnail: null,
-            reactions: [],
-            createdAt: '2024-01-14'
-        }
-    ];
+    const location = useLocation();
+
+    useEffect(() => {
+        refetch();
+    }, [location, refetch]);
 
     useEffect(() => {
         refetch();
     }, [categoryId, refetch]);
 
-    const displayData = data && data?.length > 0 ? data : mockPosts;
+    const displayData = data ?? [];
 
     return (
         <div className="px-6 py-8">
@@ -238,7 +184,7 @@ const StyledPost: React.FC<StyledPostProps> = ({
             )}
 
             {/* Actions */}
-            <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+            <div className="flex items-center justify-between pt-4 border-t border-gray-100 hidden">
                 <div className="flex items-center space-x-4">
                     <button className="flex items-center space-x-2 text-gray-800 hover:text-purple-700 transition-colors">
                         <div className="w-8 h-8 rounded-full bg-white hover:bg-purple-50 flex items-center justify-center">

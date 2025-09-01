@@ -156,3 +156,63 @@ export const conversations = [
     latestMessage: { text: "See you tomorrow" }
   }
 ];
+
+export // Mock data for demonstration
+const mockPosts = [
+    {
+        id: '1',
+        author: {
+            username: 'George',
+            profilePicture: null,
+            role: 'Founder'
+        },
+        text: 'J-3 avant le prochain Moula Challenge',
+        mediaUrl: 'https://youtu.be/79byPjpx8lP?si-DrmC,92z',
+        mediaType: 'link',
+        thumbnail: null,
+        reactions: [],
+        createdAt: '2024-01-15'
+    },
+    {
+        id: '2', 
+        author: {
+            username: 'George',
+            profilePicture: null,
+            role: 'Founder'
+        },
+        text: 'Rejoignez notre groupe de discussion, on va parler français ! 😊\n\n💬 Parlons entre créateurs de contenu !\nLorem ipsum dolor sit amet consectetur. In tincidunt molestie sollicitudin tempor nulla sed blandit lacus. Fermentum...\n\n#astuce #rpmviral',
+        mediaUrl: null,
+        mediaType: null,
+        thumbnail: null,
+        reactions: [],
+        createdAt: '2024-01-15'
+    },
+    {
+        id: '3',
+        author: {
+            username: 'George', 
+            profilePicture: null,
+            role: 'Founder'
+        },
+        text: 'Que le Q4 commence....',
+        mediaUrl: null,
+        mediaType: null,
+        thumbnail: null,
+        reactions: [],
+        createdAt: '2024-01-14'
+    },
+    {
+        id: '4',
+        author: {
+            username: 'George',
+            profilePicture: null,
+            role: 'Founder'
+        },
+        text: 'La bonne surprise... J\'étends la boutique sur un nouveau marché et le taux de conversion continue d\'exploser\n\nPour savoir comment tu peux atteindre 15K€ dans les 30 prochains jours en ecom, ajoute un 😊 en réaction pour qu\'on lance la formation',
+        mediaUrl: null,
+        mediaType: null,
+        thumbnail: null,
+        reactions: [],
+        createdAt: '2024-01-14'
+    }
+];

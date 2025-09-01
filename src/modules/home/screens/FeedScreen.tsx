@@ -92,16 +92,6 @@ export const FeedScreen: React.FC<FeedScreenProps> = ({ onBack }) => {
         <div className="bg-white border-b border-gray-200 shadow-sm">
           <div className="mx-auto">
             <div className="flex px-6 overflow-x-auto scrollbar-hide">
-              <button
-                onClick={() => handleCategoryPress(null)}
-                className={`py-4 px-4 mr-6 text-sm font-semibold border-b-3 transition-all whitespace-nowrap ${
-                  selectedCategoryId === null
-                    ? "border-purple-600 text-purple-700 bg-purple-50/50"
-                    : "border-transparent text-gray-600 hover:text-gray-800 hover:bg-gray-50"
-                }`}
-              >
-                Tous
-              </button>
               {(categories ?? []).map((category) => (
                 <button
                   key={category.id}

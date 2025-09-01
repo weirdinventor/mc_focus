@@ -45,14 +45,14 @@ export const ChatScreen: React.FC = () => {
     <div className="flex min-h-screen bg-gray-50">
       <div className="flex-1 flex flex-col">
         {/* Header with Gradient */}
-        <div className="relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #000000 0%, #000000 25%, #1a1a1a 35%, #2a3a2a 45%, #405c57ff 55%, #E79C1C 75%, #6BE1DF 100%)' }}>
+        <div className="overflow-hidden  w-screen fixed top-0" style={{ background: 'linear-gradient(135deg, #000000 0%, #000000 25%, #1a1a1a 35%, #2a3a2a 45%, #405c57ff 55%, #E79C1C 75%, #6BE1DF 100%)' }}>
           {/* Decorative background */}
           <div className="absolute top-0 right-0 w-64 h-64 opacity-10">
             <div className="w-full h-full bg-white/20 rounded-full transform translate-x-16 -translate-y-16"></div>
           </div>
 
           {/* Header Content */}
-          <div className="relative px-6 py-4">
+          <div className="px-6 py-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-4 flex-1 min-w-0">
                 <button
@@ -125,7 +125,7 @@ export const ChatScreen: React.FC = () => {
               </p>
             </div>
           ) : (
-            <div className="px-6 py-6 space-y-6 mx-auto w-full">
+            <div className="px-6 py-6 space-y-6 mx-auto w-full mb-20 mt-32">
 
               {/* Messages */}
               <div className="space-y-4">
@@ -186,7 +186,7 @@ export const ChatScreen: React.FC = () => {
         </div>
 
         {/* Message Input */}
-        <div className="border-t border-gray-200 bg-white px-6 py-4">
+        <div className="border-t border-gray-200 bg-white px-6 py-4 fixed w-screen bottom-0">
           <div className="mx-auto w-full">
             <div className="flex items-center space-x-3 bg-gray-50 rounded-2xl px-4 py-2 border border-gray-200 focus-within:border-purple-300 focus-within:ring-4 focus-within:ring-purple-50 transition-all">
               <input
