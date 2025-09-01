@@ -4,6 +4,7 @@ import { useDebounce } from 'use-debounce';
 import { ArrowLeft, Search, MessageCircle } from "lucide-react"
 import { useNavigate } from "react-router-dom"
 import { useSearchUserByUsernameQuery } from "../../../react-query/queries/user/userQueries";
+import { RootStackRoutes } from "../../../navigators/routes";
 
 
 export const SearchScreen: React.FC = () => {
@@ -49,7 +50,10 @@ export const SearchScreen: React.FC = () => {
               {searchResult.map((user) => (
                 <div
                   key={user.id}
-                  onClick={() => {}}
+                  onClick={() => {
+                    navigate(RootStackRoutes.OTHER_USER_SCREEN.replace(':username', user.username),
+                      { state: { user: user } })
+                  }}
                   className="flex items-center space-x-3 p-3 lg:p-4 bg-white rounded-lg shadow-sm border border-gray-200 cursor-pointer hover:bg-gray-50 hover:shadow-md transition-all duration-200"
                 >
                   <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gray-300 rounded-full flex items-center justify-center flex-shrink-0">
