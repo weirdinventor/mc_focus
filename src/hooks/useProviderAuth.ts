@@ -47,7 +47,13 @@ export const useProviderAuth = () => {
   ) => {
     try {
       const result = await signInWithPopup(auth, provider);
-      const idToken = await result.user.getIdToken();
+      let idToken: string | null = null;
+      if (providerName === 'google') {
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        idToken = credential?.idToken || null;
+      } else {
+        idToken = await result.user.getIdToken();
+      }
       const user = result.user;
 
       mutation(
