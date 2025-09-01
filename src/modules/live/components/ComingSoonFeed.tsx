@@ -53,26 +53,28 @@ export const ComingSoonFeed = React.memo(({ groupId }: ComingSoonFeedProps) => {
   }, [futureLives])
 
   return (
-    <FeedCardRow
-      navigationPath="/soon-content"
-      data={futureLives?.slice(0, 3) || []}
-      headerTitle="Coming Soon"
-      renderCard={(item) => (
-        <BaseLiveCard
-          key={item.id}
-          {...item}
-          coverPicture={item?.coverImage}
-          author={item?.owner.username}
-          profilePicture={item?.owner.profilePicture}
-          type="soon"
-          subscriptionRequired={item?.accessLevel === "premium"}
-          timeAgo={7}
-          startsIn={timeLeftMap[item?.id]}
-          peopleAmount={375}
-          description={item.title}
-        />
-      )}
-    />
+    <div className="ml-5 mt-5 mb-5">
+      <FeedCardRow
+        navigationPath="/soon-content"
+        data={futureLives?.slice(0, 3) || []}
+        headerTitle="Coming Soon"
+        renderCard={(item) => (
+          <BaseLiveCard
+            key={item.id}
+            {...item}
+            coverPicture={item?.coverImage}
+            author={item?.owner.username}
+            profilePicture={item?.owner.profilePicture}
+            type="soon"
+            subscriptionRequired={item?.accessLevel === "premium"}
+            timeAgo={7}
+            startsIn={timeLeftMap[item?.id]}
+            peopleAmount={375}
+            description={item.title}
+          />
+        )}
+      />
+    </div>
   )
 })
 

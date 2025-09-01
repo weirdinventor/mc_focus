@@ -73,7 +73,7 @@ export const CurrentLiveArea = () => {
           {/* Watch Button */}
           <Button
             onClick={onPressHandler}
-            className="bg-gradient-to-r from-seance-400 to-seance-500 hover:from-seance-500 hover:to-seance-600 text-white px-6 py-2 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-200"
+            className="bg-gradient-to-r from-seance-400 to-seance-500 hover:from-seance-500 hover:to-seance-600 text-black px-6 py-2 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-200"
           >
             Watch
           </Button>

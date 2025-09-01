@@ -157,8 +157,8 @@ export const conversations = [
   }
 ];
 
-export // Mock data for demonstration
-const mockPosts = [
+
+export const mockPosts = [
     {
         id: '1',
         author: {
@@ -215,4 +215,92 @@ const mockPosts = [
         reactions: [],
         createdAt: '2024-01-14'
     }
+];
+
+// Mock data for live streams
+export const currentLive = {
+  id: '1',
+  title: 'LE MEILLEUR BUSINESS PLAN POUR 2024 POUR DÉBUTER EN LIGNE',
+  presenter: 'George Bills',
+  role: 'SEO de Moulaclub',
+  viewers: 1395,
+  thumbnail: 'https://images.unsplash.com/photo-1755147047179-76e345776a1e?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+};
+
+export const upcomingLives = [
+  {
+    id: '1',
+    duration: '30min',
+    interested: 395,
+    presenter: 'George',
+    title: 'Business rentable : au cœur du monde de l\'Horlogerie luxueuse',
+    description: 'Venez rencontrer notre CEO, on ne vous le présentera plus ! Il répondra à toutes vos questions concernant le business en ligne ⌚😍',
+    participants: 2,
+    timeLeft: 'Il y a 7 heures'
+  },
+  {
+    id: '2', 
+    duration: '30min',
+    interested: 395,
+    presenter: 'George',
+    title: 'Business rentable : au cœur du monde de l\'Horlogerie luxueuse',
+    description: 'Venez rencontrer notre CEO, on ne vous le présentera plus ! Il répondra à toutes vos questions concernant le business en ligne ⌚😍',
+    participants: 2,
+    timeLeft: 'Il y a 7 heures'
+  },
+  {
+    id: '3',
+    duration: '30min', 
+    interested: 395,
+    presenter: 'George',
+    title: 'Business rentable : au cœur du monde de l\'Horlogerie luxueuse',
+    description: 'Venez rencontrer notre CEO, on ne vous le présentera plus ! Il répondra à toutes vos questions concernant le business en ligne ⌚😍',
+    participants: 2,
+    timeLeft: 'Il y a 7 heures'
+  },
+  {
+    id: '4',
+    duration: '30min',
+    interested: 395, 
+    presenter: 'George',
+    title: 'Business rentable : au cœur du monde de l\'Horlogerie luxueuse',
+    description: 'Venez rencontrer notre CEO, on ne vous le présentera plus ! Il répondra à toutes vos questions concernant le business en ligne ⌚😍',
+    participants: 2,
+    timeLeft: 'Il y a 7 heures'
+  }
+];
+
+export const replays = [
+  {
+    id: '1',
+    viewers: 1985,
+    presenter: 'George',
+    title: 'Business rentable : au cœur du monde de l\'Horlogerie luxueuse',
+    participants: 2,
+    timeLeft: 'Il y a 7 heures'
+  },
+  {
+    id: '2',
+    viewers: 1985,
+    presenter: 'George', 
+    title: 'Business rentable : au cœur du monde de l\'Horlogerie luxueuse',
+    participants: 2,
+    timeLeft: 'Il y a 7 heures'
+  },
+  {
+    id: '3',
+    viewers: 1985,
+    presenter: 'George',
+    title: 'Business rentable : au cœur du monde de l\'Horlogerie luxueuse', 
+    participants: 2,
+    timeLeft: 'Il y a 7 heures'
+  },
+  {
+    id: '4',
+    viewers: 1985,
+    presenter: 'George',
+    title: 'Business rentable : au cœur du monde de l\'Horlogerie luxueuse',
+    participants: 2, 
+    timeLeft: 'Il y a 7 heures'
+  }
 ];

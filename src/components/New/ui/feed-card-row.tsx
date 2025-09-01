@@ -45,9 +45,9 @@ export function FeedCardRow<T>({
     <div className="space-y-4">
       {/* Header */}
       <div className="flex items-center justify-between">
-        <h2 className="text-xl font-bold bg-gradient-to-r from-seance-500 to-teal-500 bg-clip-text text-transparent">
-          {headerTitle}
-        </h2>
+        <div className="flex items-center space-x-2">
+          <h2 className="text-xl font-bold text-gray-900">LIVES À VENIR</h2>
+        </div>
         {!withoutAllButton && data.length > 0 && (
           <Button
             variant="ghost"
