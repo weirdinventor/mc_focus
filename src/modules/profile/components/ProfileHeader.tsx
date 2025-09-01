@@ -31,7 +31,7 @@ export const ProfileHeader = () => {
         borderBottomLeftRadius: 32,
         borderBottomRightRadius: 32,
         paddingTop: 16,
-        background: `linear-gradient(29.74deg, #CA82FF -122.6%, #CD80F0 -91.2%, #A61EDF -58.73%, #1C0024 93.9%)`,
+        background: `linear-gradient(135deg, #000000 0%, #000000 25%, #1a1a1a 35%, #2a3a2a 45%, #405c57ff 55%, #E79C1C 75%, #6BE1DF 100%)`,
         overflow: 'hidden'
       }}
     >

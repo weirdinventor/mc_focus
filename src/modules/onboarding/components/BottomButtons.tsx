@@ -28,7 +28,7 @@ export const BottomButtons: React.FC<BottomButtonsProps> = ({
           text="common.return"
           className="w-full"
         />
-        <button disabled={disabled} onClick={onContinue} style={{backgroundColor: "#CA82FF", borderRadius: "99px", padding: "12px 24px", width: "100%"}} className="bg-[#CA82FF] text-white rounded-full px-4 py-2">SUIVANT</button>
+        <button disabled={disabled} onClick={onContinue} style={{background: "linear-gradient(135deg, #000000 0%, #405c57ff 25%, #E79C1C 50%, #E79C1C 75%, #6BE1DF 100%)", borderRadius: "99px", padding: "12px 24px", width: "100%"}} className="bg-[#CA82FF] text-white rounded-full px-4 py-2">SUIVANT</button>
       </div>
     </div>
   );

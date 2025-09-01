@@ -31,31 +31,31 @@ export default function DisplayHomeScreens() {
       <div className="mb-4 p-4 bg-gray-100 flex gap-2 flex-wrap justify-center">
         <Button 
           onClick={() => setCurrentScreen("Home")}
-          className={`px-4 py-2 rounded text-sm lg:text-base text-blue-900 ${currentScreen === "Home" ? "bg-purple-600" : "bg-white hover:bg-gray-50"} transition-colors`}
+          className={`px-4 py-2 rounded text-sm lg:text-base text-blue-900 ${currentScreen === "Home" ? "bg-gradient-to-br from-black via-[#405c57ff] via-[#E79C1C] via-[#E79C1C] to-[#6BE1DF]" : "bg-white hover:bg-gray-50"} transition-colors`}
         >
           Home
         </Button>
         <Button 
           onClick={() => setCurrentScreen("search")}
-          className={`px-4 py-2 rounded text-sm lg:text-base text-blue-900 ${currentScreen === "search" ? "bg-purple-600" : "bg-white hover:bg-gray-50"} transition-colors`}
+          className={`px-4 py-2 rounded text-sm lg:text-base text-blue-900 ${currentScreen === "search" ? "bg-gradient-to-br from-black via-[#405c57ff] via-[#E79C1C] via-[#E79C1C] to-[#6BE1DF]" : "bg-white hover:bg-gray-50"} transition-colors`}
         >
           Search
         </Button>
         <Button 
           onClick={() => setCurrentScreen("current")}
-          className={`px-4 py-2 rounded text-sm lg:text-base text-blue-900 ${currentScreen === "current" ? "bg-purple-600 text-white" : "bg-white hover:bg-gray-50"} transition-colors`}
+          className={`px-4 py-2 rounded text-sm lg:text-base text-blue-900 ${currentScreen === "current" ? "bg-gradient-to-br from-black via-[#405c57ff] via-[#E79C1C] via-[#E79C1C] to-[#6BE1DF] text-white" : "bg-white hover:bg-gray-50"} transition-colors`}
         >
           Live Now
         </Button>
         <Button 
           onClick={() => setCurrentScreen("rebroadcast")}
-          className={`px-4 py-2 rounded text-sm lg:text-base text-blue-900 ${currentScreen === "rebroadcast" ? "bg-purple-600 text-white" : "bg-white hover:bg-gray-50"} transition-colors`}
+          className={`px-4 py-2 rounded text-sm lg:text-base text-blue-900 ${currentScreen === "rebroadcast" ? "bg-gradient-to-br from-black via-[#405c57ff] via-[#E79C1C] via-[#E79C1C] to-[#6BE1DF] text-white" : "bg-white hover:bg-gray-50"} transition-colors`}
         >
           Rebroadcast
         </Button>
         <Button 
           onClick={() => setCurrentScreen("soon")}
-          className={`px-4 py-2 rounded text-sm lg:text-base text-blue-900 ${currentScreen === "soon" ? "bg-purple-600 text-white" : "bg-white hover:bg-gray-50"} transition-colors`}
+          className={`px-4 py-2 rounded text-sm lg:text-base text-blue-900 ${currentScreen === "soon" ? "bg-gradient-to-br from-black via-[#405c57ff] via-[#E79C1C] via-[#E79C1C] to-[#6BE1DF] text-white" : "bg-white hover:bg-gray-50"} transition-colors`}
         >
           Coming Soon
         </Button>

@@ -43,7 +43,7 @@ const TutorialScreen = () => {
     <div 
       className="relative w-screen h-screen overflow-hidden"
       style={{
-        background: "linear-gradient(42.15deg, #CA82FF 0%, #CD80F0 11.26%, #A61EDF 22.91%, #1C0024 77.68%)"
+        background: "linear-gradient(135deg, #000000 0%, #000000 25%, #1a1a1a 35%, #2a3a2a 45%, #405c57ff 55%, #E79C1C 75%, #6BE1DF 100%)"
       }}
     >
       {/* Background blur effects */}

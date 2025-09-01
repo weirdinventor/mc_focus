@@ -68,7 +68,7 @@ export const GroupDiscussionScreen: React.FC = ({ }) => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <div className="relative h-64 overflow-hidden" style={{ background: 'linear-gradient(29.74deg, #CA82FF -122.6%, #CD80F0 -91.2%, #A61EDF -58.73%, #1C0024 93.9%)' }}>
+      <div className="relative h-64 overflow-hidden" style={{ background: 'linear-gradient(135deg, #000000 0%, #000000 25%, #1a1a1a 35%, #2a3a2a 45%, #405c57ff 55%, #E79C1C 75%, #6BE1DF 100%)' }}>
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
@@ -183,7 +183,7 @@ const AnnouncementsSection = () => {
             </div>
             <div className="p-4">
               <div className="flex items-center space-x-2 mb-2">
-                <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center">
+                <div className="w-8 h-8 bg-gradient-to-br from-black via-[#405c57ff] via-[#E79C1C] via-[#E79C1C] to-[#6BE1DF] rounded-full flex items-center justify-center">
                   <span className="text-white font-semibold text-xs">G</span>
                 </div>
                 <div>
@@ -201,7 +201,7 @@ const AnnouncementsSection = () => {
                   </div>
                   <span className="text-xs text-gray-500">{announcement.participants} participant</span>
                 </div>
-                <button className="bg-purple-600 hover:bg-purple-700 text-purple px-4 py-1.5 rounded-full text-xs font-semibold transition-colors">
+                <button className="bg-gradient-to-br from-black via-[#405c57ff] via-[#E79C1C] via-[#E79C1C] to-[#6BE1DF] hover:bg-purple-700 text-purple px-4 py-1.5 rounded-full text-xs font-semibold transition-colors">
                   M'alerter
                 </button>
               </div>

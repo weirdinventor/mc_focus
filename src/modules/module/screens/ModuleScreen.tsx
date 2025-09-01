@@ -9,7 +9,6 @@ export const ModuleScreen = (): JSX.Element => {
     // <Wrapper> is replaced with a <div> styled to act as a fullscreen container.
     <div style={styles.container}>
       {/* TopHeader is assumed to be a web component now. */}
-      <TopHeader type="absolute" />
 
       {/* <ScrollView> is replaced with a scrollable <div>. */}
       <div style={styles.cardsWrapper}>
