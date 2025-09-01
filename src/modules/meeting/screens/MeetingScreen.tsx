@@ -16,7 +16,7 @@ export const MeetingScreen = ({ }): JSX.Element => {
       config={{
         debugMode: true,
         meetingId: "zfth-k807-obcr",
-        micEnabled: false,
+        micEnabled: true,
         webcamEnabled: false,
         name: me?.username || '',
         participantId: me?.id || '',
@@ -49,8 +49,8 @@ export const MeetingRoom = (): JSX.Element => {
   return (
     <div className="min-h-screen bg-gray-50 pb-20 md:pb-8">
       {/* Header */}
-      <div className="bg-gradient-to-r from-purple-700 to-purple-800 px-4 lg:px-8 py-3 lg:py-4">
-        <div className="max-w-7xl mx-auto">
+      <div className="relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #000000 0%, #000000 25%, #1a1a1a 35%, #2a3a2a 45%, #405c57ff 55%, #E79C1C 75%, #6BE1DF 100%)' }}>
+      <div className="max-w-7xl mx-auto">
           <div className="flex items-center space-x-4">
             <button
               onClick={() => navigate(-1)}
@@ -59,7 +59,7 @@ export const MeetingRoom = (): JSX.Element => {
               <ArrowLeft className="w-5 h-5 lg:w-6 lg:h-6" />
             </button>
             <div className="flex items-center flex-1 min-w-0">
-              <div className="w-12 h-12 lg:w-16 lg:h-16 bg-purple-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+              <div className="w-12 h-12 lg:w-16 lg:h-16 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                 <Users className="w-6 h-6 lg:w-8 lg:h-8 text-white" />
               </div>
               <div className="min-w-0 flex-1">
@@ -119,8 +119,20 @@ export const MeetingRoom = (): JSX.Element => {
   );
 };
 
+import { useRef, useEffect } from "react";
+
 const ParticipantView = ({ participantId }: { participantId: string }) => {
-  const { webcamStream, displayName } = useParticipant(participantId);
+  const { webcamStream, displayName, micStream } = useParticipant(participantId);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [muted, setMuted] = useState(false);
+  const toggleMute = () => setMuted((prev) => !prev);
+  const { localParticipant } = useMeeting();
+
+  useEffect(() => {
+    if (audioRef.current && micStream) {
+      audioRef.current.srcObject = new MediaStream([micStream.track]);
+    }
+  }, [micStream]);
 
   return (
     <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 flex flex-col items-center">
@@ -138,6 +150,23 @@ const ParticipantView = ({ participantId }: { participantId: string }) => {
         <div className="w-full h-40 flex items-center justify-center bg-gray-100 rounded-md text-gray-500">
           No Video
         </div>
+      )}
+      {micStream && (
+        <>
+          <audio
+            ref={audioRef}
+            autoPlay
+            muted={muted}
+          />
+          {participantId === localParticipant?.id && (
+            <button
+              className="mt-2 px-3 py-1 rounded bg-gray-200 hover:bg-gray-300 text-sm"
+              onClick={toggleMute}
+            >
+              {muted ? "Unmute" : "Mute"}
+            </button>
+          )}
+        </>
       )}
     </div>
   );
