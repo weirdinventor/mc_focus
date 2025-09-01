@@ -68,7 +68,7 @@ export const GroupDiscussionScreen: React.FC = ({ }) => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <div className="relative h-64 overflow-hidden" style={{ background: 'linear-gradient(135deg, #000000 0%, #000000 25%, #1a1a1a 35%, #2a3a2a 45%, #405c57ff 55%, #E79C1C 75%, #6BE1DF 100%)' }}>
+      <div className="relative h-64 overflow-hidden" >
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
@@ -76,7 +76,7 @@ export const GroupDiscussionScreen: React.FC = ({ }) => {
             alt="E-commerce background"
             className="w-full h-full object-cover opacity-30"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-900/80 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-black via-[#405c57ff] via-[#E79C1C] via-[#E79C1C] to-[#6BE1DF]"></div>
         </div>
 
         {/* Top Navigation */}
@@ -120,7 +120,7 @@ export const GroupDiscussionScreen: React.FC = ({ }) => {
         <div className="grid grid-cols-5 gap-4 mb-8">
           <div
             onClick={onDiscussionPress}
-            className={`relative h-20 rounded-xl overflow-hidden cursor-pointer hover:scale-105 transition-transform bg-gradient-to-r from-purple-400 to-purple-500`}
+            className={`relative h-20 rounded-xl overflow-hidden cursor-pointer hover:scale-105 transition-transform bg-gradient-to-br from-black via-[#405c57ff] via-[#E79C1C] via-[#E79C1C] to-[#6BE1DF]`}
           >
             <div className="absolute inset-0 p-4 flex items-center justify-between text-white">
               <span className="font-semibold text-sm">Text Chat</span>

@@ -134,7 +134,7 @@ export const DiscussionsScreen: React.FC<DiscussionsScreenProps> = ({
                 className="group relative w-128 h-44 rounded-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
               >
                 {/* Background with gradient and overlay effects */}
-                <div className={`absolute inset-0 bg-gradient-to-br from-pink-400 to-purple-500`}>
+                <div className={`absolute inset-0 bg-gradient-to-br from-black via-[#405c57ff] via-[#E79C1C] via-[#E79C1C] to-[#6BE1DF]`}>
                   {/* Overlay gradients for depth */}
                   <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-white/20 mix-blend-overlay"></div>
                   <div className="absolute inset-0 bg-gradient-to-br from-gray-600/30 via-gray-500/20 to-gray-400/30 mix-blend-normal"></div>
