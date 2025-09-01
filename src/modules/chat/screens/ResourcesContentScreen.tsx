@@ -29,7 +29,7 @@ export const ResourcesContentScreen: React.FC<ResourcesContentScreenProps> = ({
       <div className="bg-gradient-to-r from-purple-700 to-purple-800 px-4 lg:px-8 py-3 lg:py-4">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center space-x-4">
-            <button onClick={onBack} className="text-white hover:bg-purple-600 p-2 rounded-lg transition-colors">
+            <button onClick={onBack} className="text-white hover:bg-gradient-to-br from-black via-[#405c57ff] via-[#E79C1C] via-[#E79C1C] to-[#6BE1DF] p-2 rounded-lg transition-colors">
               <ArrowLeft className="w-5 h-5 lg:w-6 lg:h-6" />
             </button>
             <h1 className="text-white text-xl lg:text-2xl font-semibold">Resources</h1>
@@ -84,7 +84,7 @@ export const ResourcesContentScreen: React.FC<ResourcesContentScreenProps> = ({
             <span className="text-xs text-gray-400">Chat</span>
           </div>
           <div className="flex flex-col items-center py-2">
-            <div className="w-6 h-6 bg-purple-600 rounded mb-1"></div>
+            <div className="w-6 h-6 bg-gradient-to-br from-black via-[#405c57ff] via-[#E79C1C] via-[#E79C1C] to-[#6BE1DF] rounded mb-1"></div>
             <span className="text-xs text-purple-600 font-medium">Module</span>
           </div>
           <div className="flex flex-col items-center py-2">

@@ -85,7 +85,7 @@ export const FreeUserChatScreen: React.FC = () => {
       <div className="bg-gradient-to-r from-purple-700 to-purple-800 px-4 lg:px-8 py-3 lg:py-4">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center space-x-4">
-            <button onClick={onBack} className="text-white hover:bg-purple-600 p-2 rounded-lg transition-colors">
+            <button onClick={onBack} className="text-white hover:bg-gradient-to-br from-black via-[#405c57ff] via-[#E79C1C] via-[#E79C1C] to-[#6BE1DF] p-2 rounded-lg transition-colors">
               <ArrowLeft className="w-5 h-5 lg:w-6 lg:h-6" />
             </button>
             <div className="flex items-center flex-1 min-w-0">
@@ -105,7 +105,7 @@ export const FreeUserChatScreen: React.FC = () => {
             <div key={msg.id} className={`flex ${msg.isOwn ? 'justify-end' : 'justify-start'}`}>
               <div className={`max-w-xs lg:max-w-lg px-4 py-3 rounded-lg ${
                 msg.isOwn 
-                  ? 'bg-purple-600 text-white' 
+                  ? 'bg-gradient-to-br from-black via-[#405c57ff] via-[#E79C1C] via-[#E79C1C] to-[#6BE1DF] text-white' 
                   : 'bg-white text-gray-900 shadow-sm border border-gray-200'
               }`}>
                 {!msg.isOwn && (
@@ -131,7 +131,7 @@ export const FreeUserChatScreen: React.FC = () => {
             />
             <button
               onClick={handleSendMessage}
-              className="px-4 py-2 lg:py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
+              className="px-4 py-2 lg:py-3 bg-gradient-to-br from-black via-[#405c57ff] via-[#E79C1C] via-[#E79C1C] to-[#6BE1DF] text-white rounded-lg hover:bg-purple-700 transition-colors"
             >
               <Send className="h-4 w-4 lg:h-5 lg:w-5" />
             </button>

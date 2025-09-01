@@ -27,7 +27,7 @@ const OnboardingWrapper: React.FC<{
   <div className="onboarding-wrapper">
     <h2>Étape {step}</h2>
     {children}
-    <button onClick={onContinue} style={{backgroundColor: "#CA82FF", borderRadius: "99px", padding: "12px 24px"}} className="bg-[#CA82FF] text-white rounded-full px-4 py-2">Continuer</button>
+    <button onClick={onContinue} style={{background: "linear-gradient(135deg, #000000 0%, #405c57ff 25%, #E79C1C 50%, #E79C1C 75%, #6BE1DF 100%)", borderRadius: "99px", padding: "12px 24px"}} className="bg-[#CA82FF] text-white rounded-full px-4 py-2">Continuer</button>
   </div>
 );
 

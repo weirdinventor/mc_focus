@@ -83,7 +83,7 @@ export const DiscussionsScreen: React.FC<DiscussionsScreenProps> = ({
       {/* Main Content */}
       <div className="flex-1">
         {/* Header with Gradient */}
-        <div className="relative h-64 overflow-hidden" style={{ background: 'linear-gradient(29.74deg, #CA82FF -122.6%, #CD80F0 -91.2%, #A61EDF -58.73%, #1C0024 93.9%)' }}>
+        <div className="relative h-64 overflow-hidden" style={{ background: 'linear-gradient(135deg, #000000 0%, #000000 25%, #1a1a1a 35%, #2a3a2a 45%, #405c57ff 55%, #E79C1C 75%, #6BE1DF 100%)' }}>
           {/* Decorative background image placeholder */}
           <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-96 h-96 opacity-20">
             <div className="w-full h-full bg-white/10 rounded-full"></div>

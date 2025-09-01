@@ -51,7 +51,7 @@ export const FeedScreen: React.FC<FeedScreenProps> = ({ onBack }) => {
     <div className="flex min-h-screen bg-gray-50">
       <div className="flex-1">
         {/* Header with Gradient */}
-        <div className="relative overflow-hidden" style={{ background: 'linear-gradient(29.74deg, #CA82FF -122.6%, #CD80F0 -91.2%, #A61EDF -58.73%, #1C0024 93.9%)' }}>
+        <div className="relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #000000 0%, #000000 25%, #1a1a1a 35%, #2a3a2a 45%, #405c57ff 55%, #E79C1C 75%, #6BE1DF 100%)' }}>
           {/* Decorative background */}
           <div className="absolute top-0 right-0 w-64 h-64 opacity-10">
             <div className="w-full h-full bg-white/20 rounded-full transform translate-x-16 -translate-y-16"></div>

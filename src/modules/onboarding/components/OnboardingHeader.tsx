@@ -78,7 +78,7 @@ export const OnboardingHeader = () => {
             ? "onboarding.header.subTitleLogin"
             : "onboarding.header.subTitle"
         }
-        color="pink"
+        color="black"
       />
     </div>
   );

@@ -71,7 +71,7 @@ export const LoginScreen: React.FC = () => {
 
         <PassTextInput name="password" control={control} />
 
-        <CButton style={{background: "#CA82FF", color: "#FFFFFF"}} className="text-white" text="common.connect" onClick={handleSubmit(onPressHandler)} />
+        <CButton style={{background: "linear-gradient(135deg, #000000 0%, #405c57ff 25%, #E79C1C 50%, #E79C1C 75%, #6BE1DF 100%)", color: "#FFFFFF"}} className="text-white" text="common.connect" onClick={handleSubmit(onPressHandler)} />
 
         <CButton
           onClick={() => navigate(`${RootStackRoutes.ONBOARDING_STACK}/${OnboardingStackRoutes.FORGOT_PASS_STACK}`)}

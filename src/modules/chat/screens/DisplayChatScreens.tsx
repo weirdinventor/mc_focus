@@ -119,13 +119,13 @@ export default function DisplayChatScreens() {
       <div className="mb-4 p-4 bg-gray-100 flex gap-2 flex-wrap justify-center">
         <button 
           onClick={() => setCurrentScreen("discussions")}
-          className={`px-3 py-2 rounded text-xs lg:text-sm text-blue-900 ${currentScreen === "discussions" ? "bg-purple-600 text-white" : "bg-white hover:bg-gray-50"} transition-colors`}
+          className={`px-3 py-2 rounded text-xs lg:text-sm text-blue-900 ${currentScreen === "discussions" ? "bg-gradient-to-br from-black via-[#405c57ff] via-[#E79C1C] via-[#E79C1C] to-[#6BE1DF] text-white" : "bg-white hover:bg-gray-50"} transition-colors`}
         >
           Discussions
         </button>
         <button 
           onClick={() => setCurrentScreen("messages")}
-          className={`px-3 py-2 rounded text-xs lg:text-sm text-blue-900 ${currentScreen === "messages" ? "bg-purple-600 text-white" : "bg-white hover:bg-gray-50"} transition-colors`}
+          className={`px-3 py-2 rounded text-xs lg:text-sm text-blue-900 ${currentScreen === "messages" ? "bg-gradient-to-br from-black via-[#405c57ff] via-[#E79C1C] via-[#E79C1C] to-[#6BE1DF] text-white" : "bg-white hover:bg-gray-50"} transition-colors`}
         >
           Messages
         </button>
@@ -144,31 +144,31 @@ export default function DisplayChatScreens() {
               isGroup: false
             })
           }}
-          className={`px-3 py-2 rounded text-xs lg:text-sm text-blue-900 ${currentScreen === "chat" ? "bg-purple-600 text-white" : "bg-white hover:bg-gray-50"} transition-colors`}
+          className={`px-3 py-2 rounded text-xs lg:text-sm text-blue-900 ${currentScreen === "chat" ? "bg-gradient-to-br from-black via-[#405c57ff] via-[#E79C1C] via-[#E79C1C] to-[#6BE1DF] text-white" : "bg-white hover:bg-gray-50"} transition-colors`}
         >
           Chat
         </button>
         <button 
           onClick={() => setCurrentScreen("group")}
-          className={`px-3 py-2 rounded text-xs lg:text-sm text-blue-900 ${currentScreen === "group" ? "bg-purple-600 text-white" : "bg-white hover:bg-gray-50"} transition-colors`}
+          className={`px-3 py-2 rounded text-xs lg:text-sm text-blue-900 ${currentScreen === "group" ? "bg-gradient-to-br from-black via-[#405c57ff] via-[#E79C1C] via-[#E79C1C] to-[#6BE1DF] text-white" : "bg-white hover:bg-gray-50"} transition-colors`}
         >
           Group
         </button>
         <button 
           onClick={() => setCurrentScreen("anonces")}
-          className={`px-3 py-2 rounded text-xs lg:text-sm text-blue-900 ${currentScreen === "anonces" ? "bg-purple-600 text-white" : "bg-white hover:bg-gray-50"} transition-colors`}
+          className={`px-3 py-2 rounded text-xs lg:text-sm text-blue-900 ${currentScreen === "anonces" ? "bg-gradient-to-br from-black via-[#405c57ff] via-[#E79C1C] via-[#E79C1C] to-[#6BE1DF] text-white" : "bg-white hover:bg-gray-50"} transition-colors`}
         >
           Announcements
         </button>
         <button 
           onClick={() => setCurrentScreen("resources")}
-          className={`px-3 py-2 rounded text-xs lg:text-sm text-blue-900 ${currentScreen === "resources" ? "bg-purple-600 text-white" : "bg-white hover:bg-gray-50"} transition-colors`}
+          className={`px-3 py-2 rounded text-xs lg:text-sm text-blue-900 ${currentScreen === "resources" ? "bg-gradient-to-br from-black via-[#405c57ff] via-[#E79C1C] via-[#E79C1C] to-[#6BE1DF] text-white" : "bg-white hover:bg-gray-50"} transition-colors`}
         >
           Resources
         </button>
         <button 
           onClick={() => setCurrentScreen("freeuser")}
-          className={`px-3 py-2 rounded text-xs lg:text-sm text-blue-900 ${currentScreen === "freeuser" ? "bg-purple-600 text-white" : "bg-white hover:bg-gray-50"} transition-colors`}
+          className={`px-3 py-2 rounded text-xs lg:text-sm text-blue-900 ${currentScreen === "freeuser" ? "bg-gradient-to-br from-black via-[#405c57ff] via-[#E79C1C] via-[#E79C1C] to-[#6BE1DF] text-white" : "bg-white hover:bg-gray-50"} transition-colors`}
         >
           Free User
         </button>
