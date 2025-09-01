@@ -34,9 +34,9 @@ export const SearchScreen: React.FC = () => {
                 className="w-full pl-10 pr-4 py-2 lg:py-3 bg-white rounded-lg text-sm lg:text-base focus:outline-none focus:ring-2 focus:ring-purple-300"
               />
             </div>
-            <div className="hidden md:flex items-center space-x-4">
+            {/* <div className="hidden md:flex items-center space-x-4">
               <MessageCircle className="w-6 h-6 text-white cursor-pointer hover:text-purple-200 transition-colors" />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

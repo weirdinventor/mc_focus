@@ -85,7 +85,7 @@ export const ChatScreen: React.FC = () => {
                 </div>
               </div>
 
-              <div className="flex items-center space-x-2">
+              {/* <div className="flex items-center space-x-2">
                 {!isGroup && (
                   <>
                     <Phone className="w-6 h-6 text-white cursor-pointer hover:text-white/70 transition-colors p-1" />
@@ -94,7 +94,7 @@ export const ChatScreen: React.FC = () => {
                 )}
                 <Search className="w-6 h-6 text-white cursor-pointer hover:text-white/70 transition-colors p-1" />
                 <MoreHorizontal className="w-6 h-6 text-white cursor-pointer hover:text-white/70 transition-colors p-1" />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

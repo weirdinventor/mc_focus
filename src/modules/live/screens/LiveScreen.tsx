@@ -1,5 +1,7 @@
 import React from 'react';
 import { ArrowLeft, Search, Mail, Clock, Users, Play } from "lucide-react";
+import { RootStackRoutes } from '../../../navigators/routes';
+import { useNavigate } from 'react-router-dom';
 
 interface LiveScreenProps {
   onBack?: () => void
@@ -94,6 +96,8 @@ export const LiveScreen: React.FC<LiveScreenProps> = ({ onBack }) => {
     }
   ];
 
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header with Gradient */}
@@ -102,13 +106,14 @@ export const LiveScreen: React.FC<LiveScreenProps> = ({ onBack }) => {
         <div className="relative px-8 py-4">
           <div className="flex items-center justify-between mx-auto">
             <div className="flex items-center space-x-4">
-              <ArrowLeft className="w-6 h-6 text-white cursor-pointer hover:text-purple-200 transition-colors" />
               <span className="text-white text-xl font-bold uppercase tracking-wider">LIVE</span>
             </div>
             <div className="flex items-center space-x-3">
-              <Search className="w-6 h-6 text-white cursor-pointer hover:text-purple-200 transition-colors" />
-              <Mail className="w-6 h-6 text-white cursor-pointer hover:text-purple-200 transition-colors" />
-            </div>
+                <Search className="w-6 h-6 text-white cursor-pointer hover:text-purple-200 transition-colors" 
+                  onClick={() => navigate(RootStackRoutes.SEARCH_SCREEN)}/>
+                <Mail className="w-6 h-6 text-white cursor-pointer hover:text-purple-200 transition-colors" 
+                  onClick={() => navigate(RootStackRoutes.MESSAGES_LIST_SCREEN)}/>
+              </div>
           </div>
         </div>
 
