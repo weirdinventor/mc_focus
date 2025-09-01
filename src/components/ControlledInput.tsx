@@ -17,6 +17,7 @@ export const ControlledInput = <TFieldValues extends FieldValues>({
 }: ControlledInputProps<TFieldValues>) => {
   return (
     <Controller
+      
       control={control}
       name={name}
       render={({
