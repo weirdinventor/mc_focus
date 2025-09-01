@@ -58,8 +58,8 @@ export const MessagesListScreen: React.FC<MessagesListScreenProps> = ({
   return (
     <div className="min-h-screen bg-gray-50 pb-20 md:pb-8">
       {/* Header */}
-      <div className="bg-gradient-to-r from-purple-700 to-purple-800 px-4 lg:px-8 py-3 lg:py-4">
-        <div className="max-w-7xl mx-auto">
+      <div className="px-4 lg:px-8 py-3 lg:py-4" style={{background: 'linear-gradient(135deg, #000000 0%, #000000 25%, #1a1a1a 35%, #2a3a2a 45%, #405c57ff 55%, #E79C1C 75%, #6BE1DF 100%)'}}>
+        <div className="mx-auto">
           <div className="flex items-center space-x-4">
             {onBack && (
               <button onClick={onBack} className="text-white hover:bg-gradient-to-br from-black via-[#405c57ff] via-[#E79C1C] via-[#E79C1C] to-[#6BE1DF] p-2 rounded-lg transition-colors">
@@ -81,7 +81,7 @@ export const MessagesListScreen: React.FC<MessagesListScreenProps> = ({
           </div>
         ) : (
           <div className="px-4 lg:px-8 py-4 lg:py-6 flex-1">
-            <div className="max-w-7xl mx-auto">
+            <div className="mx-auto">
               <div className="space-y-3">
                 {filteredConversations.map((conv, i) => (
                   <div
@@ -94,7 +94,7 @@ export const MessagesListScreen: React.FC<MessagesListScreenProps> = ({
                       })
                     }
                     className={`flex items-center p-4 lg:p-6 bg-white rounded-lg shadow-sm border border-gray-200 cursor-pointer hover:shadow-lg transition-shadow duration-200 ${
-                      i % 2 === 0 ? "border-l-4 border-l-purple-500" : ""
+                      i % 2 === 0 ? "border-l-4 border-l-[#E79C1C]" : ""
                     }`}
                   >
                     <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gray-300 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
@@ -121,8 +121,8 @@ export const MessagesListScreen: React.FC<MessagesListScreenProps> = ({
         )}
 
         {/* Search Input */}
-        <div className="p-4 lg:p-6 border-t bg-white">
-          <div className="max-w-7xl mx-auto">
+        <div className="p-4 lg:p-6 border-t bg-white fixed w-screen bottom-0">
+          <div className="mx-auto">
             <div className="relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
               <input
