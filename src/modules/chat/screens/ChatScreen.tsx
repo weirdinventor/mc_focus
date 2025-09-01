@@ -13,7 +13,7 @@ export const ChatScreen: React.FC = () => {
 
   const title = state.title ?? '';
   const participant = state.participant ?? undefined;
-  const conversationId = state.conversationId ?? '0';
+  const conversationId = state.conversationId ?? undefined;
   const isGroup = state.isGroup ?? false;
 
   const { onSendMessageHandler, messages } = useChat(
@@ -23,49 +23,6 @@ export const ChatScreen: React.FC = () => {
   );
 
   const [messageText, setMessageText] = useState("")
-
-
-  // Mock messages for demonstration if no real messages
-  const mockMessages = [
-    {
-      id: '1',
-      text: 'Salut à tous ! Quelqu\'un a-t-il des conseils sur la façon de réduire le taux de rebond sur une boutique Shopify ?',
-      isOwn: false,
-      username: 'EcomGuru',
-      timestamp: '14:32',
-      avatar: 'E'
-    },
-    {
-      id: '2',
-      text: 'Bonne idée ! Je vais vérifier la vitesse de mon site. Quelqu\'un sait comment améliorer l\'expérience mobile ?',
-      isOwn: false,
-      username: 'DropWizard',
-      timestamp: '14:35',
-      avatar: 'D'
-    },
-    {
-      id: '3',
-      text: '@DropWizard, tu peux utiliser des outils comme Google\'s Mobile-Friendly Test pour voir comment ton site fonctionne sur les appareils mobiles. Ensuite, travaille sur la simplification de ton menu et sur l\'amélioration de la taille et de la réactivité de tes boutons.',
-      isOwn: false,
-      username: 'Pierroro',
-      timestamp: '14:37',
-      avatar: 'P'
-    },
-    {
-      id: '4',
-      text: '+1 pour la vitesse du site. Aussi, assure-toi que ton site est mobile-friendly. La majorité des utilisateurs font du shopping sur leur téléphone désormais.',
-      isOwn: false,
-      username: 'MarketingNinja',
-      timestamp: '14:38',
-      avatar: 'M'
-    },
-    {
-      id: '5',
-      text: 'Merci pour tous ces conseils ! Je vais commencer par optimiser la vitesse de chargement.',
-      isOwn: true,
-      timestamp: '14:40'
-    }
-  ]
 
 
   const handleSendMessage = async () => {
@@ -128,7 +85,7 @@ export const ChatScreen: React.FC = () => {
                 </div>
               </div>
 
-              <div className="flex items-center space-x-2">
+              {/* <div className="flex items-center space-x-2">
                 {!isGroup && (
                   <>
                     <Phone className="w-6 h-6 text-white cursor-pointer hover:text-white/70 transition-colors p-1" />
@@ -137,7 +94,7 @@ export const ChatScreen: React.FC = () => {
                 )}
                 <Search className="w-6 h-6 text-white cursor-pointer hover:text-white/70 transition-colors p-1" />
                 <MoreHorizontal className="w-6 h-6 text-white cursor-pointer hover:text-white/70 transition-colors p-1" />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

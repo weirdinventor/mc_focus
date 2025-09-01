@@ -96,3 +96,63 @@ export const resources = [
       type: 'code'
     }
   ];
+
+// Mock messages for demonstration if no real messages
+export const mockMessages = [
+  {
+    id: '1',
+    text: 'Salut à tous ! Quelqu\'un a-t-il des conseils sur la façon de réduire le taux de rebond sur une boutique Shopify ?',
+    isOwn: false,
+    username: 'EcomGuru',
+    timestamp: '14:32',
+    avatar: 'E'
+  },
+  {
+    id: '2',
+    text: 'Bonne idée ! Je vais vérifier la vitesse de mon site. Quelqu\'un sait comment améliorer l\'expérience mobile ?',
+    isOwn: false,
+    username: 'DropWizard',
+    timestamp: '14:35',
+    avatar: 'D'
+  },
+  {
+    id: '3',
+    text: '@DropWizard, tu peux utiliser des outils comme Google\'s Mobile-Friendly Test pour voir comment ton site fonctionne sur les appareils mobiles. Ensuite, travaille sur la simplification de ton menu et sur l\'amélioration de la taille et de la réactivité de tes boutons.',
+    isOwn: false,
+    username: 'Pierroro',
+    timestamp: '14:37',
+    avatar: 'P'
+  },
+  {
+    id: '4',
+    text: '+1 pour la vitesse du site. Aussi, assure-toi que ton site est mobile-friendly. La majorité des utilisateurs font du shopping sur leur téléphone désormais.',
+    isOwn: false,
+    username: 'MarketingNinja',
+    timestamp: '14:38',
+    avatar: 'M'
+  },
+  {
+    id: '5',
+    text: 'Merci pour tous ces conseils ! Je vais commencer par optimiser la vitesse de chargement.',
+    isOwn: true,
+    timestamp: '14:40'
+  }
+]
+
+export const conversations = [
+  {
+    id: "1",
+    participant: { username: "john_doe", profilePicture: "/user1.jpg" },
+    latestMessage: { text: "Hey, how are you?" }
+  },
+  {
+    id: "2", 
+    participant: { username: "jane_smith", profilePicture: "/user2.jpg" },
+    latestMessage: { text: "Thanks for the help!" }
+  },
+  {
+    id: "3",
+    participant: { username: "mike_wilson", profilePicture: "/user3.jpg" },
+    latestMessage: { text: "See you tomorrow" }
+  }
+];

@@ -4,6 +4,8 @@ import { useGetCategoriesQuery, useGetFeedPostsQuery } from "../../../react-quer
 import { useGetMeQuery } from "../../../react-query/queries/user/userQueries"
 import { Search, MessageCircle, ArrowLeft, Mail } from "lucide-react"
 import FeedComponent from "../components/post/FeedPosts"
+import { useNavigate } from "react-router-dom"
+import { RootStackRoutes } from "../../../navigators/routes"
 
 interface FeedScreenProps {
   ongoingLive?: any
@@ -22,6 +24,8 @@ export const FeedScreen: React.FC<FeedScreenProps> = ({ onBack }) => {
   const { fetchNextPage, hasNextPage } = useGetFeedPostsQuery({
     categoryId: selectedCategoryId || undefined,
   });
+
+  const navigate = useNavigate();
 
   const loadNext = () => {
     if (hasNextPage) {
@@ -75,8 +79,10 @@ export const FeedScreen: React.FC<FeedScreenProps> = ({ onBack }) => {
                 </div>
               </div>
               <div className="flex items-center space-x-3">
-                <Search className="w-6 h-6 text-white cursor-pointer hover:text-purple-200 transition-colors" />
-                <Mail className="w-6 h-6 text-white cursor-pointer hover:text-purple-200 transition-colors" />
+                <Search className="w-6 h-6 text-white cursor-pointer hover:text-purple-200 transition-colors" 
+                  onClick={() => navigate(RootStackRoutes.SEARCH_SCREEN)}/>
+                <Mail className="w-6 h-6 text-white cursor-pointer hover:text-purple-200 transition-colors" 
+                  onClick={() => navigate(RootStackRoutes.MESSAGES_LIST_SCREEN)}/>
               </div>
             </div>
           </div>

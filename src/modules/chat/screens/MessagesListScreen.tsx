@@ -1,59 +1,26 @@
-"use client"
-
 import { ArrowLeft, MessageCircle, Search } from "lucide-react"
 import { useState } from "react"
+import { useDebounce } from "use-debounce";
+import { useGetUserConversationsQuery } from "../../../react-query/queries/chat/chatQueries";
+import { useManualRefresh } from "../../../hooks/useManualRefresh";
+import { useNavigate } from "react-router-dom";
+import { RootStackRoutes } from "../../../navigators/routes";
 
-interface Conversation {
-  id: string
-  participant: {
-    username: string
-    profilePicture?: string
-  }
-  latestMessage?: {
-    text: string
-  }
-}
 
-interface MessagesListScreenProps {
-  conversations?: Conversation[]
-  isPending?: boolean
-  onNavigateToChat?: (params: {
-    title: string
-    conversationId: string
-    participant: any
-  }) => void
-  onRefresh?: () => void
-  isRefreshing?: boolean
-  onBack?: () => void
-}
-
-export const MessagesListScreen: React.FC<MessagesListScreenProps> = ({
-  conversations = [
-    {
-      id: "1",
-      participant: { username: "john_doe", profilePicture: "/user1.jpg" },
-      latestMessage: { text: "Hey, how are you?" }
-    },
-    {
-      id: "2", 
-      participant: { username: "jane_smith", profilePicture: "/user2.jpg" },
-      latestMessage: { text: "Thanks for the help!" }
-    },
-    {
-      id: "3",
-      participant: { username: "mike_wilson", profilePicture: "/user3.jpg" },
-      latestMessage: { text: "See you tomorrow" }
-    }
-  ],
-  isPending = false,
-  onNavigateToChat,
-  onBack,
-}) => {
+export const MessagesListScreen: React.FC = () => {
   const [searchValue, setSearchValue] = useState("")
 
-  const filteredConversations = conversations.filter((conv) =>
-    conv.participant.username.toLowerCase().includes(searchValue.toLowerCase()),
-  )
+  const [value] = useDebounce(searchValue, 350);
+
+  const navigate = useNavigate();
+
+  const {
+    data: conversationsList,
+    isPending,
+    refetch,
+  } = useGetUserConversationsQuery(value);
+  const { refresh, isRefreshing } = useManualRefresh(refetch);
+
 
   return (
     <div className="min-h-screen bg-gray-50 pb-20 md:pb-8">
@@ -61,11 +28,10 @@ export const MessagesListScreen: React.FC<MessagesListScreenProps> = ({
       <div className="bg-gradient-to-r from-purple-700 to-purple-800 px-4 lg:px-8 py-3 lg:py-4">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center space-x-4">
-            {onBack && (
-              <button onClick={onBack} className="text-white hover:bg-gradient-to-br from-black via-[#405c57ff] via-[#E79C1C] via-[#E79C1C] to-[#6BE1DF] p-2 rounded-lg transition-colors">
+              <button onClick={() => navigate(-1)} className="text-white hover:bg-gradient-to-br from-black via-[#405c57ff] via-[#E79C1C] via-[#E79C1C] to-[#6BE1DF] p-2 rounded-lg transition-colors">
+
                 <ArrowLeft className="w-5 h-5 lg:w-6 lg:h-6" />
               </button>
-            )}
             <h1 className="text-white text-xl lg:text-2xl font-semibold">Messages</h1>
           </div>
         </div>
@@ -73,7 +39,7 @@ export const MessagesListScreen: React.FC<MessagesListScreenProps> = ({
 
       {/* Messages Content */}
       <div className="flex-1 flex flex-col">
-        {!conversations.length && !isPending ? (
+        {conversationsList && (conversationsList.length === 0 ? (
           <div className="flex flex-col items-center justify-center h-64 text-center px-4">
             <MessageCircle className="w-16 h-16 text-gray-300 mb-4" />
             <h3 className="text-lg font-medium text-gray-900 mb-2">No messages yet</h3>
@@ -83,16 +49,17 @@ export const MessagesListScreen: React.FC<MessagesListScreenProps> = ({
           <div className="px-4 lg:px-8 py-4 lg:py-6 flex-1">
             <div className="max-w-7xl mx-auto">
               <div className="space-y-3">
-                {filteredConversations.map((conv, i) => (
+                {conversationsList.map((conv, i) => (
                   <div
-                    key={conv.id}
-                    onClick={() =>
-                      onNavigateToChat?.({
-                        title: conv.participant.username,
-                        conversationId: conv.id,
-                        participant: conv.participant,
+                    onClick={() => {
+                      navigate(RootStackRoutes.CHAT_SCREEN, {
+                        state: {
+                          title: conv.participant.username,
+                          conversationId: conv.id,
+                          participant: conv.participant.id,
+                        }
                       })
-                    }
+                    }}
                     className={`flex items-center p-4 lg:p-6 bg-white rounded-lg shadow-sm border border-gray-200 cursor-pointer hover:shadow-lg transition-shadow duration-200 ${
                       i % 2 === 0 ? "border-l-4 border-l-purple-500" : ""
                     }`}
@@ -118,7 +85,7 @@ export const MessagesListScreen: React.FC<MessagesListScreenProps> = ({
               </div>
             </div>
           </div>
-        )}
+        ))}
 
         {/* Search Input */}
         <div className="p-4 lg:p-6 border-t bg-white">
