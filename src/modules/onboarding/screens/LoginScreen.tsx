@@ -1,6 +1,6 @@
 import EtaSymbol from "./../../../assets/svg/etaSymbol.svg?react";
 import { CButton } from "./../../../components/Buttons/CButton";
-import { ControlledInput } from "./../../../components/ControlledInput";
+import { EmailTextInput } from "./../../../components/EmailTextInput";
 import { PassTextInput } from "./../../../components/PassTextInput";
 import { Wrapper } from "./../../../components/Wrapper";
 import { Colors } from "./../../../constants/Colors";
@@ -58,18 +58,8 @@ export const LoginScreen: React.FC = () => {
           </div>
         )}
 
-        <div className={`input-wrapper`}>
-          <ControlledInput
-            placeholderText="common.mail"
-            control={control}
-            name="email"
-            LeftAccessory={() => (
-              <EtaSymbol width={20} height={20} />
-            )}
-            />
-        </div>
-
-        <PassTextInput name="password" control={control} />
+        <EmailTextInput name="email" control={control} placeHolder="Email" />
+        <PassTextInput name="password" control={control} placeHolder="Mot de passe" />
 
         <CButton style={{background: "linear-gradient(135deg, #000000 0%, #405c57ff 25%, #E79C1C 50%, #E79C1C 75%, #6BE1DF 100%)", color: "#FFFFFF"}} className="text-white" text="common.connect" onClick={handleSubmit(onPressHandler)} />
 
