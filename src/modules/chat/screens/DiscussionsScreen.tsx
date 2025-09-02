@@ -53,6 +53,7 @@ export const DiscussionsScreen: React.FC<DiscussionsScreenProps> = ({
                 DISCUSSIONS
               </h1>
               <p className="text-white/90 text-lg leading-relaxed">
+                Choisis un thème et viens échanger avec la communauté et partager tes idées sur les business en ligne
               </p>
             </div>
           </div>
