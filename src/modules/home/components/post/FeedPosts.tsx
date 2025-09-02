@@ -11,7 +11,7 @@ interface FeedComponentProps {
 }
 
 const FeedComponent: React.FC<FeedComponentProps> = ({ categoryId, userId }) => {
-    const { data, isPending, isFetchingNextPage, refetch } = useGetFeedPostsQuery({ categoryId: categoryId ?? undefined });
+    const { data, isPending, isFetchingNextPage, fetchNextPage, hasNextPage, refetch } = useGetFeedPostsQuery({ categoryId: categoryId ?? undefined });
 
     const location = useLocation();
 
@@ -59,13 +59,24 @@ const FeedComponent: React.FC<FeedComponentProps> = ({ categoryId, userId }) => 
                                 </p>
                                 <button 
                                     onClick={() => refetch()}
-                                    className="mt-6 px-6 py-3 bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-lg hover:from-purple-700 hover:to-purple-800 transition-all duration-200 font-semibold"
+                                    className="mt-6 px-6 py-3 bg-[linear-gradient(135deg,#000000_0%,#000000_25%,#1a1a1a_35%,#2a3a2a_45%,#405c57ff_55%,#E79C1C_75%,#6BE1DF_100%)] text-white rounded-lg hover:opacity-90 transition-all duration-200 font-semibold"
                                 >
                                     Actualiser
                                 </button>
                             </div>
                         )
                     }
+                    {hasNextPage && (
+                      <div className="flex justify-center pt-4">
+                        <button
+                          onClick={() => fetchNextPage()}
+                          disabled={!hasNextPage || isFetchingNextPage}
+                          className="px-6 py-3 bg-[linear-gradient(135deg,#000000_0%,#000000_25%,#1a1a1a_35%,#2a3a2a_45%,#405c57ff_55%,#E79C1C_75%,#6BE1DF_100%)] text-white rounded-lg hover:opacity-90 transition-all duration-200 font-semibold"
+                        >
+                          {isFetchingNextPage ? "Chargement..." : "Charger plus"}
+                        </button>
+                      </div>
+                    )}
                 </div>
             </div>
         </div>

@@ -43,11 +43,13 @@ export const feedFactory = {
           categoryId: req.categoryId,
         }),
       initialPageParam: 1,
-      getNextPageParam: (lastPage, _, lastPageParam) => {
-        if (lastPageParam === lastPage?.pagination.totalPages) {
+      getNextPageParam: (lastPage) => {
+        const current = lastPage?.pagination?.currentPage;
+        const total = lastPage?.pagination?.totalPages;
+        if (!current || !total || current >= total) {
           return undefined;
         }
-        return lastPageParam + 1;
+        return current + 1;
       },
     }),
   getTimeframeLives: (req: GetTimeframeLivesCommand) =>
