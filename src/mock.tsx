@@ -304,3 +304,63 @@ export const replays = [
     timeLeft: 'Il y a 7 heures'
   }
 ];
+
+export const categories = [
+    {
+      id: '1',
+      name: 'E-COMMERCE',
+      color: 'from-pink-400 to-purple-500',
+      icon: '🐷',
+      voiceRoomId: 'voice1'
+    },
+    {
+      id: '2', 
+      name: 'IMMOBILIER',
+      color: 'from-yellow-400 to-green-500',
+      icon: '🏠',
+      members: 1997
+    },
+    {
+      id: '3',
+      name: 'FISCALITÉ', 
+      color: 'from-blue-400 to-blue-600',
+      icon: '📚'
+    },
+    {
+      id: '4',
+      name: 'AUTOMOBILE',
+      color: 'from-red-400 to-red-600', 
+      icon: '🚗'
+    },
+    {
+      id: '5',
+      name: 'A.I',
+      color: 'from-gray-700 to-black',
+      icon: '🤖'
+    },
+    {
+      id: '6',
+      name: 'DEFIS',
+      color: 'from-yellow-600 to-orange-600',
+      icon: '💰'
+    },
+    {
+      id: '7',
+      name: 'INTERVIEWS', 
+      color: 'from-purple-500 to-indigo-600',
+      icon: '📷',
+      voiceRoomId: 'voice2'
+    },
+    {
+      id: '8',
+      name: 'COWORKING',
+      color: 'from-green-500 to-green-600',
+      icon: '🌱'
+    },
+    {
+      id: '9',
+      name: 'DIVERS',
+      color: 'from-cyan-400 to-cyan-600', 
+      icon: '📦'
+    }
+  ];

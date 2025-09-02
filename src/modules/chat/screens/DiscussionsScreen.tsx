@@ -13,66 +13,7 @@ export const DiscussionsScreen: React.FC<DiscussionsScreenProps> = ({
   onNavigateToGroup,
   onBack
 }) => {
-  // Mock data for the categories
-  const categories = [
-    {
-      id: '1',
-      name: 'E-COMMERCE',
-      color: 'from-pink-400 to-purple-500',
-      icon: '🐷',
-      voiceRoomId: 'voice1'
-    },
-    {
-      id: '2', 
-      name: 'IMMOBILIER',
-      color: 'from-yellow-400 to-green-500',
-      icon: '🏠',
-      members: 1997
-    },
-    {
-      id: '3',
-      name: 'FISCALITÉ', 
-      color: 'from-blue-400 to-blue-600',
-      icon: '📚'
-    },
-    {
-      id: '4',
-      name: 'AUTOMOBILE',
-      color: 'from-red-400 to-red-600', 
-      icon: '🚗'
-    },
-    {
-      id: '5',
-      name: 'A.I',
-      color: 'from-gray-700 to-black',
-      icon: '🤖'
-    },
-    {
-      id: '6',
-      name: 'DEFIS',
-      color: 'from-yellow-600 to-orange-600',
-      icon: '💰'
-    },
-    {
-      id: '7',
-      name: 'INTERVIEWS', 
-      color: 'from-purple-500 to-indigo-600',
-      icon: '📷',
-      voiceRoomId: 'voice2'
-    },
-    {
-      id: '8',
-      name: 'COWORKING',
-      color: 'from-green-500 to-green-600',
-      icon: '🌱'
-    },
-    {
-      id: '9',
-      name: 'DIVERS',
-      color: 'from-cyan-400 to-cyan-600', 
-      icon: '📦'
-    }
-  ];
+  
 
   const navigate = useNavigate()
   const { data: discussions } = useGetDiscussionsQuery();
@@ -134,7 +75,7 @@ export const DiscussionsScreen: React.FC<DiscussionsScreenProps> = ({
                 className="group relative w-128 h-44 rounded-lg overflow-hidden cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
               >
                 {/* Background with gradient and overlay effects */}
-                <div className={`absolute inset-0 bg-gradient-to-br from-black via-[#405c57ff] via-[#E79C1C] via-[#E79C1C] to-[#6BE1DF]`}>
+                <div className={`absolute inset-0 bg-gradient-to-br `} style={{ backgroundImage: `url(${category.coverImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
                   {/* Overlay gradients for depth */}
                   <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-white/20 mix-blend-overlay"></div>
                   <div className="absolute inset-0 bg-gradient-to-br from-gray-600/30 via-gray-500/20 to-gray-400/30 mix-blend-normal"></div>
@@ -150,11 +91,6 @@ export const DiscussionsScreen: React.FC<DiscussionsScreenProps> = ({
                     {category.members && (
                       <p className="text-white/80 text-sm mt-1">{category.members.toLocaleString()}</p>
                     )}
-                  </div>
-
-                  {/* Icon/Illustration */}
-                  <div className="z-10 text-6xl opacity-80 filter drop-shadow-lg">
-                  📚
                   </div>
                 </div>
 
