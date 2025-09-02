@@ -72,11 +72,10 @@ export const GroupDiscussionScreen: React.FC = ({ }) => {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src='/api/placeholder/800/300'
+            src={discussion.coverImage}
             alt="E-commerce background"
-            className="w-full h-full object-cover opacity-30"
+            className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-black via-[#405c57ff] via-[#E79C1C] via-[#E79C1C] to-[#6BE1DF]"></div>
         </div>
 
         {/* Top Navigation */}
