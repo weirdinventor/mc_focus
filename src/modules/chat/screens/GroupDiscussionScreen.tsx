@@ -108,7 +108,7 @@ export const GroupDiscussionScreen: React.FC = ({ }) => {
               {discussion.name}
             </h1>
             <p className="text-white/90 text-lg max-w-2xl">
-              {discussion.name}
+              {discussion.subject}
             </p>
           </div>
         </div>
