@@ -172,9 +172,9 @@ const StyledPost: React.FC<StyledPostProps> = ({
                     ) : (
                         <div className="rounded-lg overflow-hidden">
                             {mediaType === 'image' ? (
-                                <img src={mediaUrl} alt="" className="w-full h-auto" />
+                                <img src={mediaUrl} alt="" className="w-auto h-[300px]" />
                             ) : mediaType === 'video' ? (
-                                <video controls className="w-full h-auto">
+                                <video controls className="w-auto h-[300px]" poster={thumbnailUrl || undefined}>
                                     <source src={mediaUrl} />
                                 </video>
                             ) : null}
