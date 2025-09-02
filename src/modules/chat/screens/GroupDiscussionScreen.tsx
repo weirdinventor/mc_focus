@@ -6,7 +6,7 @@ import { useJoinVoiceRoomMutation } from '../../../react-query/queries/stream/st
 import { useGetDiscussionByIdQuery } from '../../../react-query/queries/chat/chatQueries';
 import { useGetResourcesByGroupIdQuery } from '../../../react-query/queries/feed/feedQueries';
 import { announcements } from '../../../mock';
-
+import ImageAssets from './../../../assets/images';
 
 export const GroupDiscussionScreen: React.FC = ({ }) => {
 
@@ -119,7 +119,8 @@ export const GroupDiscussionScreen: React.FC = ({ }) => {
         <div className="grid grid-cols-5 gap-4 mb-8">
           <div
             onClick={onDiscussionPress}
-            className={`relative h-20 rounded-xl overflow-hidden cursor-pointer hover:scale-105 transition-transform bg-gradient-to-br from-black via-[#405c57ff] via-[#E79C1C] via-[#E79C1C] to-[#6BE1DF]`}
+            className={`relative h-20 rounded-xl overflow-hidden cursor-pointer hover:scale-105 transition-transform`}
+            style={{ backgroundImage: `url(${ImageAssets.BLOCK_CHAT})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
           >
             <div className="absolute inset-0 p-4 flex items-center justify-between text-white">
               <span className="font-semibold text-sm">Text Chat</span>
@@ -131,7 +132,8 @@ export const GroupDiscussionScreen: React.FC = ({ }) => {
           {voiceRoomId && (
             <div
               onClick={onVocalChannelPress}
-              className={`relative h-20 rounded-xl overflow-hidden cursor-pointer hover:scale-105 transition-transform bg-gradient-to-r from-red-400 to-red-500`}
+              className={`relative h-20 rounded-xl overflow-hidden cursor-pointer hover:scale-105 transition-transform`}
+              style={{ backgroundImage: `url(${ImageAssets.BLOCK_MIC})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
             >
               <div className="absolute inset-0 p-4 flex items-center justify-between text-white">
                 <span className="font-semibold text-sm">Voice Channel</span>
