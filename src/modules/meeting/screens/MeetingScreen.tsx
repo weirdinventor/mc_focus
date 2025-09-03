@@ -1,8 +1,8 @@
-import { useState, type JSX } from "react"
+import { useState, useEffect, useRef, type JSX } from "react"
 import { MeetingProvider, useMeeting, useParticipant } from "@videosdk.live/react-sdk";
 import { useGetMeQuery } from "../../../react-query/queries/user/userQueries";
 import { useLocation, useNavigate } from "react-router-dom";
-import { ArrowLeft, Users } from "lucide-react";
+import { ArrowLeft, Users, ChevronLeft, ChevronRight } from "lucide-react";
 
 export const MeetingScreen = ({ }): JSX.Element => {
   const location = useLocation();
@@ -29,11 +29,10 @@ export const MeetingScreen = ({ }): JSX.Element => {
   );
 };
 
-
-
 export const MeetingRoom = (): JSX.Element => {
   const { join, leave, participants, meeting } = useMeeting();
   const [joined, setJoined] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -86,10 +85,10 @@ export const MeetingRoom = (): JSX.Element => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-20 md:pb-8">
+    <div className="min-h-screen bg-gray-50 flex flex-col">
       {/* Header */}
-      <div className="relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #000000 0%, #000000 25%, #1a1a1a 35%, #2a3a2a 45%, #405c57ff 55%, #E79C1C 75%, #6BE1DF 100%)' }}>
-      <div className="max-w-7xl mx-auto">
+      <div className="relative overflow-hidden flex-shrink-0" style={{ background: 'linear-gradient(135deg, #000000 0%, #000000 25%, #1a1a1a 35%, #2a3a2a 45%, #405c57ff 55%, #E79C1C 75%, #6BE1DF 100%)' }}>
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-4">
           <div className="flex items-center space-x-4">
             <button
               onClick={() => navigate(-1)}
@@ -107,66 +106,105 @@ export const MeetingRoom = (): JSX.Element => {
                 </h1>
               </div>
             </div>
+            {/* Sidebar toggle for mobile */}
+            <button
+              onClick={() => setSidebarOpen(!sidebarOpen)}
+              className="lg:hidden text-white hover:bg-black/20 p-2 rounded-lg transition-colors"
+            >
+              {sidebarOpen ? <ChevronRight className="w-5 h-5" /> : <ChevronLeft className="w-5 h-5" />}
+            </button>
           </div>
         </div>
       </div>
 
-      {/* Main Content */}
-      <div className="px-4 lg:px-8 py-6">
-        <div className="max-w-7xl mx-auto space-y-8">
-          {/* Join/Leave Controls */}
-          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 lg:p-8 flex justify-center gap-4">
-            <button
-              onClick={handleJoin}
-              disabled={joined}
-              className={`px-4 py-2 rounded-lg font-medium transition ${
-                joined
-                  ? "bg-gray-400 cursor-not-allowed text-black"
-                  : "bg-green-600 hover:bg-green-700 text-black"
-              }`}
-            >
-              {joined ? "Joined" : "Join Meeting"}
-            </button>
+      {/* Main Content Area */}
+      <div className="flex-1 flex overflow-hidden">
+        {/* Main Meeting Area */}
+        <div className="flex-1 flex flex-col overflow-hidden">
+          <div className="p-4 lg:p-8 flex-1 overflow-hidden pb-24">
+            <div className="max-w-full flex flex-col h-full space-y-6">
 
-            <button
-              onClick={handleLeave}
-              disabled={!joined}
-              className={`px-4 py-2 rounded-lg font-medium transition ${
-                !joined
-                  ? "bg-gray-400 cursor-not-allowed text-black"
-                  : "bg-red-600 hover:bg-red-700 text-black"
-              }`}
-            >
-              Leave
-            </button>
-          </div>
-
-          <div id="screenshare-container" className="w-full h-96 bg-black rounded-lg overflow-hidden mb-6"></div>
-
-          {/* Participants */}
-          <div>
-            <h2 className="text-lg lg:text-xl font-semibold text-gray-900 mb-4">
-              Participants
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {[...participants.keys()].map((participantId) => (
-                <ParticipantView key={participantId} participantId={participantId} />
-              ))}
+              {/* Screen Share Container */}
+              <div id="screenshare-container" className="w-full flex-1 bg-black rounded-lg overflow-hidden"></div>
             </div>
           </div>
         </div>
+
+        {/* Participants Sidebar */}
+        <div className={`${
+          sidebarOpen ? 'w-80' : 'w-0'
+        } lg:w-80 bg-white border-l border-gray-200 flex-shrink-0 transition-all duration-300 ease-in-out overflow-hidden`}>
+          <div className="h-full flex flex-col">
+            {/* Sidebar Header */}
+            <div className="p-4 border-b border-gray-200 flex items-center justify-between">
+              <div className="flex items-center space-x-2">
+                <Users className="w-5 h-5 text-gray-600" />
+                <h2 className="text-lg font-semibold text-gray-900">
+                  Participants ({participants.size})
+                </h2>
+              </div>
+              <button
+                onClick={() => setSidebarOpen(false)}
+                className="lg:hidden text-gray-500 hover:text-gray-700 p-1 rounded"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </div>
+            
+            {/* Participants List */}
+            <div className="flex-1 overflow-y-auto p-4">
+              <div className="space-y-3">
+                {[...participants.keys()].map((participantId) => (
+                  <ParticipantView key={participantId} participantId={participantId} />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Sidebar Toggle Button (when closed) */}
+        {!sidebarOpen && (
+          <button
+            onClick={() => setSidebarOpen(true)}
+            className="fixed right-4 top-1/2 transform -translate-y-1/2 bg-white shadow-lg border border-gray-200 rounded-l-lg p-2 hover:bg-gray-50 transition-colors z-10"
+          >
+            <ChevronLeft className="w-5 h-5 text-gray-600" />
+          </button>
+        )}
+      </div>
+
+      {/* Bottom Controls */}
+      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 flex justify-center gap-4 z-30">
+        <button
+          onClick={handleJoin}
+          disabled={joined}
+          className={`px-4 py-2 rounded-lg font-medium transition ${
+            joined
+              ? "bg-gray-400 cursor-not-allowed text-black"
+              : "bg-green-600 hover:bg-green-700 text-black"
+          }`}
+        >
+          {joined ? "Joined" : "Join Meeting"}
+        </button>
+        <button
+          onClick={handleLeave}
+          disabled={!joined}
+          className={`px-4 py-2 rounded-lg font-medium transition ${
+            !joined
+              ? "bg-gray-400 cursor-not-allowed text-black"
+              : "bg-red-600 hover:bg-red-700 text-black"
+          }`}
+        >
+          Leave
+        </button>
       </div>
     </div>
   );
 };
 
-import { useRef, useEffect } from "react";
-
 const ParticipantView = ({ participantId }: { participantId: string }) => {
   const { webcamStream, displayName, micStream } = useParticipant(participantId);
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const [muted, setMuted] = useState(false);
-  const toggleMute = () => setMuted((prev) => !prev);
   const { localParticipant } = useMeeting();
 
   useEffect(() => {
@@ -176,38 +214,47 @@ const ParticipantView = ({ participantId }: { participantId: string }) => {
   }, [micStream]);
 
   return (
-    <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 flex flex-col items-center">
-      <h3 className="font-medium text-base text-gray-900 mb-2">{displayName}</h3>
+    <div className="bg-gray-50 rounded-lg p-3 border border-gray-200">
+      <div className="flex items-center space-x-3 mb-3">
+        <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0">
+          <span className="text-white text-sm font-medium">
+            {displayName?.charAt(0)?.toUpperCase() || 'U'}
+          </span>
+        </div>
+        <div className="flex-1 min-w-0">
+          <h3 className="font-medium text-sm text-gray-900 truncate">
+            {displayName}
+            {participantId === localParticipant?.id && (
+              <span className="text-xs text-gray-500 ml-1">(You)</span>
+            )}
+          </h3>
+        </div>
+      </div>
+      
       {webcamStream ? (
-        <video
-          autoPlay
-          playsInline
-          className="w-full rounded-md"
-          ref={(ref) => {
-            if (ref) ref.srcObject = new MediaStream([webcamStream.track]);
-          }}
-        />
+        <div className="mb-3">
+          <video
+            autoPlay
+            playsInline
+            muted={participantId === localParticipant?.id}
+            className="w-full h-32 rounded-md object-cover bg-black"
+            ref={(ref) => {
+              if (ref) ref.srcObject = new MediaStream([webcamStream.track]);
+            }}
+          />
+        </div>
       ) : (
-        <div className="w-full h-40 flex items-center justify-center bg-gray-100 rounded-md text-gray-500">
+        <div className="w-full h-32 flex items-center justify-center bg-gray-200 rounded-md text-gray-500 text-sm mb-3">
           No Video
         </div>
       )}
+      
       {micStream && (
-        <>
-          <audio
-            ref={audioRef}
-            autoPlay
-            muted={participantId === localParticipant?.id ? muted : false}
-          />
-          {participantId === localParticipant?.id && (
-            <button
-              className="mt-2 px-3 py-1 rounded bg-gray-200 hover:bg-gray-300 text-sm"
-              onClick={toggleMute}
-            >
-              {muted ? "Unmute" : "Mute"}
-            </button>
-          )}
-        </>
+        <audio
+          ref={audioRef}
+          autoPlay
+          muted={participantId === localParticipant?.id ? false : false}
+        />
       )}
     </div>
   );
