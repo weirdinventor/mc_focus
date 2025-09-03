@@ -16,9 +16,15 @@ const calculateTimeLeft = (airsAt: string) => {
   const difference = airTime - now
 
   if (difference > 0) {
-    const hours = Math.floor(difference / (1000 * 60 * 60))
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24))
+    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60))
-    return `${hours}h ${minutes}m`
+    const parts = [];
+    if (days > 0) parts.push(`${days}d`);
+    if (hours > 0) parts.push(`${hours}h`);
+    if (minutes > 0) parts.push(`${minutes}m`);
+
+    return parts.join(" ");
   }
   return "Starting soon"
 }
@@ -58,8 +64,9 @@ export const ComingSoonFeed = React.memo(({ groupId }: ComingSoonFeedProps) => {
         navigationPath="/soon-content"
         data={futureLives?.slice(0, 3) || []}
         headerTitle="Coming Soon"
-        renderCard={(item) => (
-          <BaseLiveCard
+        renderCard={(item) => {
+          console.log('Rendering item:', item);
+          return <BaseLiveCard
             key={item.id}
             {...item}
             coverPicture={item?.coverImage}
@@ -72,7 +79,7 @@ export const ComingSoonFeed = React.memo(({ groupId }: ComingSoonFeedProps) => {
             peopleAmount={375}
             description={item.title}
           />
-        )}
+        }}
       />
     </div>
   )
