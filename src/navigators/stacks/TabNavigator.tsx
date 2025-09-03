@@ -169,14 +169,14 @@ const TabLayout: React.FC = () => {
           </NavLink>
 
           {/* Module Tab */}
-          <NavLink 
+          {/* <NavLink 
             to={`${RootStackRoutes.TAB_STACK}/${TabBarStackRoutes.MODULE}`} 
             style={({ isActive }) => navItemStyle(isActive)}
           >
             {({ isActive }) => (
               <SlGraduation style={iconStyle(isActive)} />
             )}
-          </NavLink>
+          </NavLink> */}
         </div>
 
         {/* Profile */}
