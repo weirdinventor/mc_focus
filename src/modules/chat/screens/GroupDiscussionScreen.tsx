@@ -159,7 +159,7 @@ const AnnouncementsSection = () => {
     <div className="mb-12">
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-xl font-bold text-gray-900">ANNONCES</h2>
-        <button className="text-purple-600 hover:text-purple-700 font-semibold">VOIR TOUT</button>
+        <button className="text-[#E79C1C] hover:text-[#6BE1DF] font-semibold">VOIR TOUT</button>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -227,7 +227,7 @@ const ResourcesSection = ({ groupId } : { groupId: string }) => {
           <h2 className="text-xl font-bold text-gray-900">RESSOURCES</h2>
           <span className="text-xl">📚</span>
         </div>
-        <button className="text-purple-600 hover:text-purple-700 font-semibold">VOIR TOUT</button>
+        <button className="text-[#E79C1C] hover:text-[#6BE1DF] font-semibold">VOIR TOUT</button>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-8 gap-4">

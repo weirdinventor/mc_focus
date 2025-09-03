@@ -133,7 +133,7 @@ export const CurrentContentScreen: React.FC<CurrentContentScreenProps> = ({
           </div>
           <div className="flex flex-col items-center py-2">
             <div className="w-6 h-6 bg-gradient-to-br from-black via-[#405c57ff] via-[#E79C1C] via-[#E79C1C] to-[#6BE1DF] rounded mb-1"></div>
-            <span className="text-xs text-purple-600 font-medium">Live</span>
+            <span className="text-xs text-[#E79C1C] font-medium">Live</span>
           </div>
           <div className="flex flex-col items-center py-2">
             <div className="w-6 h-6 bg-gray-400 rounded mb-1"></div>
