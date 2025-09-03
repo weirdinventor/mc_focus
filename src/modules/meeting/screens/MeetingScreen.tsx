@@ -15,7 +15,7 @@ export const MeetingScreen = ({ }): JSX.Element => {
     <MeetingProvider
       config={{
         debugMode: true,
-        meetingId: "zfth-k807-obcr",
+        meetingId: meetingId,
         micEnabled: streamType !== "live",
         webcamEnabled: false,
         name: me?.username || '',
