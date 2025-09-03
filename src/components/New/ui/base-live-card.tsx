@@ -87,7 +87,7 @@ export const BaseLiveCard: React.FC<BaseLiveCardProps> = ({
         )}
       </div>
 
-      <CardContent className="p-4">
+      <CardContent className="p-2">
         <div className="flex items-start gap-3">
           <img
             src={profilePicture || "/placeholder.svg"}
@@ -95,7 +95,7 @@ export const BaseLiveCard: React.FC<BaseLiveCardProps> = ({
             className="w-10 h-10 rounded-full object-cover flex-shrink-0"
           />
 
-          <div className="flex-1 min-w-0">
+          <div className="flex-1 justify-start text-left min-w-0">
             <h3 className="font-semibold text-gray-900 line-clamp-2 mb-1">{title}</h3>
             <p className="text-sm text-gray-600 line-clamp-2 mb-2">{description}</p>
             <p className="text-sm font-medium text-gray-800 mb-2">{author}</p>
