@@ -16,11 +16,11 @@ export const MeetingScreen = ({ }): JSX.Element => {
       config={{
         debugMode: true,
         meetingId: "zfth-k807-obcr",
-        micEnabled: true,
+        micEnabled: streamType !== "live",
         webcamEnabled: false,
         name: me?.username || '',
         participantId: me?.id || '',
-        mode: 'SEND_AND_RECV',
+        mode: streamType === 'live' ? 'RECV_ONLY' : 'SEND_AND_RECV',
       }}
       token={token}
     >
@@ -32,9 +32,48 @@ export const MeetingScreen = ({ }): JSX.Element => {
 
 
 export const MeetingRoom = (): JSX.Element => {
-  const { join, leave, participants } = useMeeting();
+  const { join, leave, participants, meeting } = useMeeting();
   const [joined, setJoined] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const handleStreamEnabled = (stream: { kind: string; track: MediaStreamTrack }) => {
+      if (stream.kind === "audio") {
+        const audio = new Audio();
+        audio.srcObject = new MediaStream([stream.track]);
+        audio.autoplay = true;
+        audio.play().catch((error) => {
+          console.error("Failed to play audio stream:", error);
+        });
+      }
+      if (stream.kind === "share") {
+        const container = document.getElementById("screenshare-container");
+        if (container) {
+          const video = document.createElement("video");
+          video.srcObject = new MediaStream([stream.track]);
+          video.autoplay = true;
+          video.playsInline = true;
+          video.style.width = "100%";
+          video.style.height = "100%";
+          container.appendChild(video);
+        }
+      }
+    };
+    const handleStreamDisabled = (stream: { kind: string; track: MediaStreamTrack }) => {
+      if (stream.kind === "share") {
+        const container = document.getElementById("screenshare-container");
+        if (container) {
+          container.innerHTML = "";
+        }
+      }
+    };
+    meeting?.on("stream-enabled", handleStreamEnabled);
+    meeting?.on("stream-disabled", handleStreamDisabled);
+    return () => {
+      meeting?.off("stream-enabled", handleStreamEnabled);
+      meeting?.off("stream-disabled", handleStreamDisabled);
+    };
+  }, [meeting]);
 
   const handleJoin = () => {
     join();
@@ -102,6 +141,8 @@ export const MeetingRoom = (): JSX.Element => {
             </button>
           </div>
 
+          <div id="screenshare-container" className="w-full h-96 bg-black rounded-lg overflow-hidden mb-6"></div>
+
           {/* Participants */}
           <div>
             <h2 className="text-lg lg:text-xl font-semibold text-gray-900 mb-4">
@@ -156,7 +197,7 @@ const ParticipantView = ({ participantId }: { participantId: string }) => {
           <audio
             ref={audioRef}
             autoPlay
-            muted={muted}
+            muted={participantId === localParticipant?.id ? muted : false}
           />
           {participantId === localParticipant?.id && (
             <button

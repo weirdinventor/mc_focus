@@ -2,22 +2,16 @@ import React from "react"
 import { Button } from "../../../../components/New/ui/button"
 import { CurrentLiveChips } from "./CurrentLiveChips"
 import { useGetSingleOngoingLiveQuery } from "../../../../react-query/queries/feed/feedQueries"
+import { useNavigate } from "react-router-dom"
+import { RootStackRoutes } from "../../../../navigators/routes"
+import { useJoinStreamMutation } from "../../../../react-query/queries/stream/streamMutations"
 
-
-
-// Mock mutation hook
-const useJoinStreamMutation = () => {
-  return {
-    mutate: (params: any, options: any) => {
-      console.log("Joining stream:", params)
-      options.onSuccess?.({ token: "mock-token", roomId: "mock-room" })
-    },
-  }
-}
 
 export const CurrentLiveArea = () => {
   const { data: ongoingLive, refetch } = useGetSingleOngoingLiveQuery();
   const { mutate } = useJoinStreamMutation()
+
+  const navigate = useNavigate();
 
   React.useEffect(() => {
     refetch()
@@ -29,8 +23,13 @@ export const CurrentLiveArea = () => {
         { liveId: ongoingLive.id },
         {
           onSuccess: (data: any) => {
-            console.log("Navigating to meeting screen with:", data)
-            // In real app, navigate to meeting screen
+            navigate(RootStackRoutes.MEETING_SCREEN, {
+              state: {
+                streamType: 'live',
+                token: data.token,
+                meetingId: data.roomId,
+              }
+            });
           },
         },
       )

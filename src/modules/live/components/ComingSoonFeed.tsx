@@ -63,7 +63,7 @@ export const ComingSoonFeed = React.memo(({ groupId }: ComingSoonFeedProps) => {
       <FeedCardRow
         navigationPath="/soon-content"
         data={futureLives?.slice(0, 3) || []}
-        headerTitle="Coming Soon"
+        headerTitle="Live a venir"
         renderCard={(item) => {
           console.log('Rendering item:', item);
           return <BaseLiveCard
