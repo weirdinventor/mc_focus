@@ -237,7 +237,7 @@ const ParticipantView = ({ participantId }: { participantId: string }) => {
   return (
     <div className="bg-gray-50 rounded-lg p-3 border border-gray-200">
       <div className="flex items-center space-x-3 mb-3">
-        <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0">
+        <div className="w-8 h-8 bg-gradient-to-br from-[#405c57ff] via-[#E79C1C] to-[#6BE1DF] rounded-full flex items-center justify-center flex-shrink-0 shadow-md">
           <span className="text-white text-sm font-medium">
             {displayName?.charAt(0)?.toUpperCase() || 'U'}
           </span>

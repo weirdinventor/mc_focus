@@ -48,8 +48,8 @@ const FeedComponent: React.FC<FeedComponentProps> = ({ categoryId, userId }) => 
                         ))
                         : (
                             <div className="flex flex-col items-center justify-center py-16 text-center">
-                                <div className="w-24 h-24 bg-gradient-to-br from-purple-100 to-purple-200 rounded-full flex items-center justify-center mb-6">
-                                    <MessageCircle className="w-12 h-12 text-purple-400" />
+                                <div className="w-24 h-24 bg-gradient-to-br from-yellow-100 to-yellow-200 rounded-full flex items-center justify-center mb-6">
+                                    <MessageCircle className="w-12 h-12 text-yellow-400" />
                                 </div>
                                 <h3 className="text-2xl font-bold text-gray-800 mb-3">
                                     Aucun post pour le moment
