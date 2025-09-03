@@ -96,9 +96,9 @@ export const FeedScreen: React.FC<FeedScreenProps> = ({ onBack }) => {
                 <button
                   key={category.id}
                   onClick={() => handleCategoryPress(category.id)}
-                  className={`py-4 px-4 mr-6 text-sm font-semibold border-b-3 transition-all whitespace-nowrap ${
+                  className={`py-4 px-4 mr-6 text-sm font-semibold transition-all whitespace-nowrap ${
                     selectedCategoryId === category.id
-                      ? "border-purple-600 text-purple-700 bg-purple-50/50"
+                      ? "border-[#E79C1C] border-2 text-[#E79C1C]"
                       : "border-transparent text-gray-600 hover:text-gray-800 hover:bg-gray-50"
                   }`}
                 >

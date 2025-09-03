@@ -146,7 +146,7 @@ export const ChatScreen: React.FC = () => {
                       {((section as any).data || [section]).slice().reverse().map((message: any) => (
                         <div key={message.id} className={`flex items-start space-x-3 ${message.isOwn ? 'flex-row-reverse space-x-reverse' : ''}`}>
                           {!message.isOwn && (
-                            <div className="w-10 h-10 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">
+                            <div className="w-10 h-10 bg-gradient-to-br from-[#405c57ff] via-[#E79C1C] to-[#6BE1DF] rounded-full flex items-center justify-center flex-shrink-0 shadow-md">
                               <span className="text-white text-sm font-bold">
                                 {message.avatar || message.username?.charAt(0)?.toUpperCase() || 'U'}
                               </span>
@@ -188,7 +188,7 @@ export const ChatScreen: React.FC = () => {
         {/* Message Input */}
         <div className="border-t border-gray-200 bg-white px-6 py-4 fixed w-screen bottom-0">
           <div className="mx-auto w-full">
-            <div className="flex items-center space-x-3 bg-gray-50 rounded-2xl px-4 py-2 border border-gray-200 focus-within:border-purple-300 focus-within:ring-4 focus-within:ring-purple-50 transition-all">
+            <div className="flex items-center space-x-3 bg-gray-50 rounded-2xl px-4 py-2 border border-gray-200 focus-within:border-[#E79C1C] focus-within:ring-4 focus-within:ring-purple-50 transition-all">
               <input
                 value={messageText}
                 onChange={(e) => setMessageText(e.target.value)}

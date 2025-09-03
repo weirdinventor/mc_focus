@@ -48,8 +48,8 @@ const FeedComponent: React.FC<FeedComponentProps> = ({ categoryId, userId }) => 
                         ))
                         : (
                             <div className="flex flex-col items-center justify-center py-16 text-center">
-                                <div className="w-24 h-24 bg-gradient-to-br from-purple-100 to-purple-200 rounded-full flex items-center justify-center mb-6">
-                                    <MessageCircle className="w-12 h-12 text-purple-400" />
+                                <div className="w-24 h-24 bg-gradient-to-br from-yellow-100 to-yellow-200 rounded-full flex items-center justify-center mb-6">
+                                    <MessageCircle className="w-12 h-12 text-yellow-400" />
                                 </div>
                                 <h3 className="text-2xl font-bold text-gray-800 mb-3">
                                     Aucun post pour le moment
@@ -175,7 +175,7 @@ const StyledPost: React.FC<StyledPostProps> = ({
                                 href={formatLink(mediaUrl)} 
                                 target="_blank" 
                                 rel="noopener noreferrer"
-                                className="text-purple-600 hover:text-purple-700 underline break-all text-sm"
+                                className="text-[#E79C1C] hover:text-[#6BE1DF] underline break-all text-sm"
                             >
                                 {formatLink(mediaUrl)}
                             </a>
@@ -197,19 +197,19 @@ const StyledPost: React.FC<StyledPostProps> = ({
             {/* Actions */}
             <div className="flex items-center justify-between pt-4 border-t border-gray-100 hidden">
                 <div className="flex items-center space-x-4">
-                    <button className="flex items-center space-x-2 text-gray-800 hover:text-purple-700 transition-colors">
+                    <button className="flex items-center space-x-2 text-gray-800 hover:text-[#6BE1DF] transition-colors">
                         <div className="w-8 h-8 rounded-full bg-white hover:bg-purple-50 flex items-center justify-center">
                             ❤️
                         </div>
                         <span className="text-sm font-medium">J'aime</span>
                     </button>
-                    <button className="flex items-center space-x-2 text-gray-800 hover:text-purple-700 transition-colors">
+                    <button className="flex items-center space-x-2 text-gray-800 hover:text-[#6BE1DF] transition-colors">
                         <div className="w-8 h-8 rounded-full bg-white hover:bg-purple-50 flex items-center justify-center">
                             💬
                         </div>
                         <span className="text-sm font-medium">Commenter</span>
                     </button>
-                    <button className="flex items-center space-x-2 text-gray-800 hover:text-purple-700 transition-colors">
+                    <button className="flex items-center space-x-2 text-gray-800 hover:text-[#6BE1DF] transition-colors">
                         <div className="w-8 h-8 rounded-full bg-white hover:bg-purple-50 flex items-center justify-center">
                             📤
                         </div>

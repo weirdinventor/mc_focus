@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { useForm, UseFormRegister } from "react-hook-form";
+import { useForm, UseFormRegister, useController, Control } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Colors } from "./../../../constants/Colors";
@@ -10,12 +10,60 @@ import EtaSymbol from './../../../assets/svg/etaSymbol.svg?react';
 // --- New Imports for Web Conversion ---
 import { useNavigate } from "react-router-dom";
 import { OnboardingStackRoutes, RootStackRoutes } from "../../../navigators/routes";
-
+import { CButton } from "../../../components/Buttons/CButton";
 
 const emailScheme = z.object({
   email: z.string().email("Adresse email invalide"),
 });
 type EmailScheme = z.infer<typeof emailScheme>;
+
+// Input styles matching EmailTextInput
+const inputStyles = `
+  .input-wrapper { 
+    display: flex; 
+    align-items: center; 
+    background-color: rgba(0, 0, 0, 0.05); 
+    border: 1px solid transparent; 
+    border-radius: 9999px; 
+    padding: 16px; 
+    height: 56px; 
+    transition: border-color 0.2s, box-shadow 0.2s; 
+    margin-bottom: 1rem;
+    position: relative;
+  }
+  .input-wrapper.focused { 
+    border-color: ${Colors.seance400}; 
+    box-shadow: 0 0 0 2px rgba(106, 90, 205, 0.2); 
+  }
+  .input-wrapper .accessory { 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+  }
+  .input-wrapper .left-accessory { 
+    margin-right: 12px; 
+  }
+  .input-wrapper .right-accessory { 
+    margin-left: 12px; 
+  }
+  .input-field { 
+    flex: 1; 
+    height: 100%; 
+    border: none; 
+    background: transparent; 
+    font-size: 16px; 
+    outline: none; 
+    padding: 0; 
+  }
+  .error { 
+    color: red; 
+    font-size: 12px; 
+    margin-top: 4px; 
+    position: absolute;
+    bottom: -20px;
+    left: 16px;
+  }
+`;
 
 // --- Helper Components ---
 // Wrapper web pour onboarding
@@ -24,72 +72,78 @@ const OnboardingWrapper: React.FC<{
   onContinue: () => void;
   children: React.ReactNode;
 }> = ({ step, onContinue, children }) => (
-  <div className="onboarding-wrapper">
-    <h2>Étape {step}</h2>
-    {children}
-    <button onClick={onContinue} style={{background: "linear-gradient(135deg, #000000 0%, #405c57ff 25%, #E79C1C 50%, #E79C1C 75%, #6BE1DF 100%)", borderRadius: "99px", padding: "12px 24px"}} className="bg-[#CA82FF] text-white rounded-full px-4 py-2">Continuer</button>
+  <div className="min-h-screen flex items-center justify-center p-4 w-4xl">
+    <div className="w-full max-w-7xl mx-auto p-6 sm:p-8 md:p-12">
+      <div className="flex flex-col items-center justify-center gap-6 sm:gap-8">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 text-center">
+          Étape {step}
+        </h2>
+        <div className="w-full max-w-4xl">
+          {children}
+        </div>
+        <div className="w-full max-w-md">
+          <CButton 
+            style={{
+              background: "linear-gradient(135deg, #000000 0%, #405c57ff 25%, #E79C1C 50%, #E79C1C 75%, #6BE1DF 100%)", 
+              color: "#FFFFFF"
+            }} 
+            className="text-white w-full" 
+            text="common.continue" 
+            onClick={onContinue} 
+          />
+        </div>
+      </div>
+    </div>
   </div>
 );
 
-// Exemple d’input contrôlé web
+// Updated ControlledInput with the same styling as EmailTextInput
 const ControlledInput = ({
-  inputRef,
-  placeholderText,
+  control,
   name,
-  register,
+  placeholderText,
   error,
   LeftAccessory,
 }: {
-  inputRef: React.RefObject<HTMLInputElement | null>;
+  control: Control<EmailScheme>;
+  name: keyof EmailScheme;
   placeholderText: string;
-  name: keyof EmailScheme; // ✅ sécurisé ("email" uniquement)
-  register: UseFormRegister<EmailScheme>; // ✅ typé correctement
   error?: string;
-  LeftAccessory?: React.FC<{ state: "focused" | "default" }>;
-
+  LeftAccessory?: React.ComponentType<{ isFocused: boolean }>;
 }) => {
-  const [focused, setFocused] = React.useState(false);
-
-  // 🔑 On sépare `ref` de `register` pour éviter le doublon
-  const { ref, ...rest } = register(name);
+  const { field } = useController({ name, control });
+  const [isFocused, setIsFocused] = React.useState(false);
 
   return (
-    <div className="input-container bg-black/5 p-4 w-3xl rounded-full" style={{ position: "relative", marginBottom: '1rem' }}>
-      {LeftAccessory && (
-        <div style={{ position: "absolute", left: 8, top: 8 }}>
-
-          <LeftAccessory state={focused ? "focused" : "default"} />
-        </div>
-      )}
-      <input
-        {...rest}
-        ref={(el) => {
-          ref(el); // assigne le ref à react-hook-form
-          if (inputRef) {
-            (inputRef as React.MutableRefObject<HTMLInputElement | null>).current = el;
-          }
-        }}
-        placeholder={placeholderText}
-        type="email"
-        onFocus={() => setFocused(true)}
-        onBlur={() => setFocused(false)}
-        style={{ paddingLeft: LeftAccessory ? 32 : 8, width: '100%', height: '40px' }}
-      />
-      {error && <p style={{ color: 'red', fontSize: '12px', marginTop: '4px' }} className="error">{error}</p>}
-    </div>
+    <>
+      <style>{inputStyles}</style>
+      <div className={`input-wrapper ${isFocused ? 'focused' : ''}`}>
+        {LeftAccessory && (
+          <div className="accessory left-accessory">
+            <LeftAccessory isFocused={isFocused} />
+          </div>
+        )}
+        <input
+          {...field}
+          placeholder={placeholderText}
+          type="email"
+          className="input-field"
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => setIsFocused(false)}
+        />
+        {error && <p className="error">{error}</p>}
+      </div>
+    </>
   );
 };
 
-export const EmailScreen: React.FC = ({
-}) => {
-
+export const EmailScreen: React.FC = () => {
   const dispatch = useAppDispatch();
   const { mutate: checkEmail } = useCheckEmailMutation();
-
   const navigate = useNavigate();
 
   const {
-    register,
+    control,
     handleSubmit,
     setError,
     formState: { errors },
@@ -98,10 +152,7 @@ export const EmailScreen: React.FC = ({
     resolver: zodResolver(emailScheme),
   });
 
-  const emailRef = useRef<HTMLInputElement | null>(null);
-
   const onContinueHandler = ({ email }: EmailScheme) => {
-    emailRef.current?.blur();
     checkEmail(
       { email },
       {
@@ -113,7 +164,6 @@ export const EmailScreen: React.FC = ({
             return;
           }
           dispatch(OnboardingActions.setSignupInfo({ email }));
-          // Use the navigate function from the hook
           navigate(`${RootStackRoutes.ONBOARDING_STACK}/${OnboardingStackRoutes.PASSWORD_SCREEN}`);
         },
       }
@@ -121,18 +171,17 @@ export const EmailScreen: React.FC = ({
   };
 
   return (
-    <OnboardingWrapper step={1} onContinue={handleSubmit(onContinueHandler)}>
+    <OnboardingWrapper step={1} onContinue={handleSubmit(onContinueHandler)}>      
       <ControlledInput
-        inputRef={emailRef}
+        control={control}
         placeholderText="Entrez votre email"
         name="email"
-        register={register}
         error={errors.email?.message}
-        LeftAccessory={({ state }) => (
+        LeftAccessory={({ isFocused }) => (
           <EtaSymbol
             width={20}
             height={20}
-            stroke={state === "focused" ? Colors.seance400 : Colors.grey6}
+            stroke={isFocused ? Colors.seance400 : Colors.grey6}
           />
         )}
       />

@@ -50,7 +50,7 @@ export const ResourcesContentScreen: React.FC<ResourcesContentScreenProps> = ({
               <div key={item.id} className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 lg:p-6 hover:shadow-lg transition-shadow duration-200 cursor-pointer">
                 <div className="flex items-start justify-between mb-3">
                   <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <MessageCircle className="w-6 h-6 text-purple-600" />
+                    <MessageCircle className="w-6 h-6 text-[#E79C1C]" />
                   </div>
                   {item.type && (
                     <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded font-medium">
@@ -85,7 +85,7 @@ export const ResourcesContentScreen: React.FC<ResourcesContentScreenProps> = ({
           </div>
           <div className="flex flex-col items-center py-2">
             <div className="w-6 h-6 bg-gradient-to-br from-black via-[#405c57ff] via-[#E79C1C] via-[#E79C1C] to-[#6BE1DF] rounded mb-1"></div>
-            <span className="text-xs text-purple-600 font-medium">Module</span>
+            <span className="text-xs text-[#E79C1C] font-medium">Module</span>
           </div>
           <div className="flex flex-col items-center py-2">
             <div className="w-6 h-6 bg-gray-400 rounded mb-1"></div>
