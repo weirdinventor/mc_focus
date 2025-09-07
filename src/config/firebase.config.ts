@@ -8,13 +8,13 @@ import { KEYS } from '../storage/Keys';
 
 // Firebase configuration object
 const firebaseConfig = {
-  apiKey: "AIzaSyCUND2uqLRyuaMp1XxsnT2FjN0W07CVUg0",
-  authDomain: "discord-94445.firebaseapp.com",
-  databaseURL: "https://discord-94445-default-rtdb.firebaseio.com",
-  projectId: "discord-94445",
-  storageBucket: "discord-94445.firebasestorage.app",
-  messagingSenderId: "171932480576",
-  appId: "1:171932480576:web:ce39184e0efc03cc485ba5",
+  apiKey: "AIzaSyCZgcfdG3XaEFsqu8Z1h-QAy5yIzX7mC-E",
+  authDomain: "moulaclub-app.firebaseapp.com",
+  databaseURL: "https://moulaclub-app-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "moulaclub-app",
+  storageBucket: "moulaclub-app.appspot.com",
+  messagingSenderId: "636860347845",
+  appId: "1:636860347845:web:f256610ca20500f50d07ac",
   measurementId: "G-0YK1YE3THK"
 };
 
