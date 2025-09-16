@@ -12,17 +12,17 @@ const TutorialScreen = () => {
   const tutorialData = [
     {
       title: "LE MEILLEUR DU BUSINESS EN LIGNE",
-      description: "Lorem ipsum dolor sit amet consectetur. Convallis semper sed curabitur sit mattis congue maecenas.",
+      description: "Découvrez les stratégies les plus efficaces et les outils indispensables pour réussir dans votre business (en ligne).",
       image: IA.TUT_BG,
     },
     {
       title: "LIVES EXCLUSIFS DE BUSINESS",
-      description: "Lorem ipsum dolor sit amet consectetur. Convallis semper sed curabitur sit mattis congue maecenas.",
+      description: "Accédez à des conseils et des stratégies exclusifs concoctés par nos experts pour faire décoller votre business",
       image: IA.TWO,
     },
     {
       title: "LIVES EXCLUSIFS DE BUSINESS",
-      description: "Lorem ipsum dolor sit amet consectetur. Convallis semper sed curabitur sit mattis congue maecenas.",
+      description: "Gardez une longueur d'avance avec nos tips et nos news quotidiens (provenant du club et de la communauté)",
       image: IA.THREE,
       isLast: true
     }
