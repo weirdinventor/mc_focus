@@ -13,9 +13,9 @@ import { prodConfig } from './config.prod';
 
 
 export enum CONSTANTS {
-  GOOGLE_AUTH_CLIENT_ID = '636860347845-7iltraoqamis786k797e70u7g9dc22p4.apps.googleusercontent.com',
+  GOOGLE_AUTH_CLIENT_ID = '129417697565-jfjouroi54b152qlrlbqd4falumsn4ba.apps.googleusercontent.com',
   APPLE_GOOGLE_AUTH_CLIENT_ID = '636860347845-8aeuomg27mgjvu3sicpokap7ulroeere.apps.googleusercontent.com',
-  FB_REALTIME_URL = 'https://moulaclub-app-default-rtdb.europe-west1.firebasedatabase.app',
+  FB_REALTIME_URL = 'https://focus-9b734-default-rtdb.firebaseio.com/',
   DEEPLINK_PREFIX = 'moulaclub://',
   EXTERNAL_API_KEY = 'jTNV5kjx5ZOhHzfOaJYtnvqs1lnrOcd1TsDRYplEZHVyWQDu6xkOuoJzTk7Tyb214WBfDfJNUmnFMUe69ygxmQ1zqvobPR6FzcVctbZbjy0IqGlm0KeT7Dp8FP8vcBWr',
   EXTERNAL_API_URL = 'https://moulaclub.com/app/mobile/subscription/status',

@@ -10,10 +10,10 @@ import { getFirestore, Firestore } from 'firebase/firestore';
 // Find this in your Firebase project console:
 // Project Settings > General > Your apps > Web app > SDK setup and configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCZgcfdG3XaEFsqu8Z1h-QAy5yIzX7mC-E",
-  authDomain: "moulaclub-app.firebaseapp.com",
-  databaseURL: "https://moulaclub-app-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "moulaclub-app",
+  apiKey: "AIzaSyDELwATErjBufZr9JppFgVXZj1oRxjdfBo",
+  authDomain: "focus-9b734.firebaseapp.com",
+  databaseURL: "https://focus-9b734-default-rtdb.firebaseio.com",
+  projectId: "focus-9b734",
   storageBucket: "moulaclub-app.appspot.com",
   messagingSenderId: "636860347845",
   appId: "1:636860347845:web:f256610ca20500f50d07ac",

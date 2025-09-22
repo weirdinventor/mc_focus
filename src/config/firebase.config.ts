@@ -8,14 +8,13 @@ import { KEYS } from '../storage/Keys';
 
 // Firebase configuration object
 const firebaseConfig = {
-  apiKey: "AIzaSyCZgcfdG3XaEFsqu8Z1h-QAy5yIzX7mC-E",
-  authDomain: "moulaclub-app.firebaseapp.com",
-  databaseURL: "https://moulaclub-app-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "moulaclub-app",
-  storageBucket: "moulaclub-app.appspot.com",
-  messagingSenderId: "636860347845",
-  appId: "1:636860347845:web:f256610ca20500f50d07ac",
-  measurementId: "G-0YK1YE3THK"
+  apiKey: "AIzaSyDELwATErjBufZr9JppFgVXZj1oRxjdfBo",
+  authDomain: "focus-9b734.firebaseapp.com",
+  databaseURL: "https://focus-9b734-default-rtdb.firebaseio.com",
+  projectId: "focus-9b734",
+  storageBucket: "focus-9b734.firebasestorage.app",
+  messagingSenderId: "129417697565",
+  appId: "1:129417697565:web:a2a3a21e28acd363e1a9f4"
 };
 
 // Initialize Firebase only once
