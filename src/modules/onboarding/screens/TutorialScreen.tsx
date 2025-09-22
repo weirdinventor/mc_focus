@@ -124,7 +124,7 @@ const TutorialScreen = () => {
           {/* Continue Button */}
           <button
             onClick={handleNext}
-            className="px-8 py-4 text-white font-bold uppercase tracking-wide text-lg"
+            className="px-8 py-4 text-white font-bold uppercase tracking-wide text-lg fixed bottom-8 left-1/2 -translate-x-1/2 z-20 md:static md:translate-x-0"
             style={{
               background: "linear-gradient(180deg, #FFFFFF 59.86%, #CACACA 100%)",
               WebkitBackgroundClip: "text",
