@@ -54,13 +54,6 @@ export const ProvidersChoices: React.FC = () => {
 
       <SocialProviderButton
         type="signup"
-        onPress={() => onProviderPress("apple")}
-        provider="apple"
-        hasBorder
-      />
-
-      <SocialProviderButton
-        type="signup"
         onPress={onPressHandler}
         provider="email"
         hasBorder
